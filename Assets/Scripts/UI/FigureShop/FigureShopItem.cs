@@ -11,14 +11,17 @@ public class FigureShopItem : MonoBehaviour
     [SerializeField] [Required] private TextMeshProUGUI _cPSText;
     [SerializeField] [Required] private Button _buyButton;
 
+    private float _currentCost;
+    
     private void Awake()
     {
         _buyButton.onClick.AddListener(() =>
         {
-            if (CurrencyManager.CanSpendCurrency(_figureShopSO.Cost))
+            if (CurrencyManager.CanSpendCurrency(_currentCost))
             {
-                CurrencyManager.SpendCurrency(_figureShopSO.Cost);
+                CurrencyManager.SpendCurrency(_currentCost);
                 PlayerSave.GainFigure(_figureShopSO.FigureData.FigureType);
+                UpdateCost();
             }
         });
         
@@ -27,8 +30,15 @@ public class FigureShopItem : MonoBehaviour
 
     private void SetupItem()
     {
+        _currentCost = _figureShopSO.Cost;
         _nameText.text = _figureShopSO.FigureData.Name;
-        _costText.text = $"${_figureShopSO.Cost}";
+        _costText.text = $"${_currentCost}";
         _cPSText.text = $"+{_figureShopSO.FigureData.CPS}/s";
+    }
+
+    private void UpdateCost()
+    {
+        _currentCost = _figureShopSO.Cost * _figureShopSO.CostMultiplierCurve.Evaluate(PlayerSave.GetFigureByType(_figureShopSO.FigureData.FigureType));
+        _costText.text = $"${_currentCost}";
     }
 }

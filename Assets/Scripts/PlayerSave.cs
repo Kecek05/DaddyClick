@@ -28,4 +28,11 @@ public static class PlayerSave
         OnGainFigure?.Invoke();
         Debug.Log(Figures[figureType]);
     }
+    
+    public static int GetFigureByType(FigureType figureType)
+    {
+        Figures.TryGetValue(figureType, out int figureCount);
+        Debug.Log($"Figure: {figureType}, Count: {figureCount}");
+        return figureCount;
+    }
 }
