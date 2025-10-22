@@ -37,7 +37,7 @@ public class FigureShopItem : MonoBehaviour
 
     private void UpdateCost()
     {
-        _currentCost = _figureShopSO.Cost * _figureShopSO.CostMultiplierCurve.Evaluate(PlayerSave.GetFigureByType(_figureShopSO.FigureData.FigureType));
+        _currentCost = _figureShopSO.Cost * _figureShopSO.CostMultiplierCurve.Evaluate(PlayerSave.GetFigureAmountByType(_figureShopSO.FigureData.FigureType));
         _costText.text = $"${_currentCost}";
     }
     

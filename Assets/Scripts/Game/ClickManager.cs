@@ -11,12 +11,13 @@ public class ClickManager : MonoBehaviour
     [SerializeField] private FigureDataListSO _figuresDataSO;
     private float _cps;
     
+    public float CPS => _cps;
     
     private void Start()
     {
         _clickUIManager.OnClick += ClickUIManagerOnOnClick;
         PlayerSave.OnGainFigure += PlayerSaveOnOnGainFigure;
-        
+        PlayerSaveOnOnGainFigure();
         StartCoroutine(AutoClicker());
     }
 

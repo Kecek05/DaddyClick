@@ -11,6 +11,7 @@ public class HUDUIManager : MonoBehaviour
     {
         CurrencyManager.OnCurrencyChanged += CurrencyManagerOnOnCurrencyChanged;
         ClickManager.OnCpsChanged += ClickManagerOnOnCpsChanged;
+        CurrencyManagerOnOnCurrencyChanged(PlayerSave.Clicks);
     }
 
     private void OnDestroy()

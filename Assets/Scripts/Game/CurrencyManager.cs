@@ -11,12 +11,20 @@ public static class CurrencyManager
     public static void AddCurrency(float amount)
     {
         _clicksCurrency += amount;
+        PlayerSave.SetClicks(_clicksCurrency);
         OnCurrencyChanged?.Invoke(_clicksCurrency);
     }
 
     public static void SpendCurrency(float amount)
     {
         _clicksCurrency -= amount;
+        PlayerSave.SetClicks(_clicksCurrency);
+        OnCurrencyChanged?.Invoke(_clicksCurrency);
+    }
+    
+    public static void SetCurrency(float amount)
+    {
+        _clicksCurrency = amount;
         OnCurrencyChanged?.Invoke(_clicksCurrency);
     }
     
