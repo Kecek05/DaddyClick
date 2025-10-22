@@ -19,4 +19,9 @@ public static class CurrencyManager
         _clicksCurrency -= amount;
         OnCurrencyChanged?.Invoke(_clicksCurrency);
     }
+    
+    public static bool CanSpendCurrency(float amount)
+    {
+        return _clicksCurrency >= amount;
+    }
 }

@@ -4,5 +4,7 @@ using UnityEngine;
 public class FigureDataSO : ScriptableObject
 {
     public string Name;
+    public FigureType FigureType;
     public Sprite Icon;
+    public float CPS;
 }

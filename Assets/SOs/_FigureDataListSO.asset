@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9448e04629333b84eb220e995fe4a3c9, type: 3}
-  m_Name: JasonDataSO
-  m_EditorClassIdentifier: Assembly-CSharp::FigureDataSO
-  Name: Jason
-  FigureType: 1
-  Icon: {fileID: 0}
-  CPS: 1
+  m_Script: {fileID: 11500000, guid: 27c276f735910d248bf8ea0fbbf2a4b3, type: 3}
+  m_Name: _FigureDataListSO
+  m_EditorClassIdentifier: Assembly-CSharp::FigureDataListSO
+  Figures:
+  - {fileID: 11400000, guid: 9fa48d28b5233dd4e9bba3776c508e4a, type: 2}

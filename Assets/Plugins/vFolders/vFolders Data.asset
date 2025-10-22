@@ -17,6 +17,7 @@ MonoBehaviour:
     - 90517af3a3624ae4f86a7f5fa6046f94
     - 8b4d1a46e8d460d40af38448be8c3674
     - 59fb207346456d9449e0d20205e17ab2
+    - de47e400035160d41a865a6221432b92
     values:
     - iconNameOrGuid: Light Icon
       colorIndex: 8
@@ -30,6 +31,11 @@ MonoBehaviour:
       colorIndex: 6
       isIconRecursive: 0
       isColorRecursive: 0
+    - iconNameOrGuid: ScriptableObject Icon
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
   bookmarks:
   - guid: 8b4d1a46e8d460d40af38448be8c3674
   - guid: 59fb207346456d9449e0d20205e17ab2
+  - guid: de47e400035160d41a865a6221432b92

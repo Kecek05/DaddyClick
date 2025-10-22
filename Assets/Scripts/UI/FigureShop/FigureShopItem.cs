@@ -15,7 +15,11 @@ public class FigureShopItem : MonoBehaviour
     {
         _buyButton.onClick.AddListener(() =>
         {
-            Debug.Log($"Bought item");
+            if (CurrencyManager.CanSpendCurrency(_figureShopSO.Cost))
+            {
+                CurrencyManager.SpendCurrency(_figureShopSO.Cost);
+                PlayerSave.GainFigure(_figureShopSO.FigureData.FigureType);
+            }
         });
         
         SetupItem();
@@ -25,6 +29,6 @@ public class FigureShopItem : MonoBehaviour
     {
         _nameText.text = _figureShopSO.FigureData.Name;
         _costText.text = $"${_figureShopSO.Cost}";
-        _cPSText.text = $"+{_figureShopSO.CPS}/s";
+        _cPSText.text = $"+{_figureShopSO.FigureData.CPS}/s";
     }
 }
