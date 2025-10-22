@@ -19,6 +19,6 @@ public class HUDUIManager : MonoBehaviour
     
     private void CurrencyManagerOnOnCurrencyChanged(float totalCurrency)
     {
-        _currencyText.text = totalCurrency.ToString("C");
+        _currencyText.text = $"Clicks: {totalCurrency}";
     }
 }
