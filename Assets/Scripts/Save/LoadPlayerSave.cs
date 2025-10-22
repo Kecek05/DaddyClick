@@ -1,4 +1,5 @@
 using System.Collections;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class LoadPlayerSave : MonoBehaviour
@@ -16,7 +17,6 @@ public class LoadPlayerSave : MonoBehaviour
         while (true)
         {
             PlayerSave.ManualSave();
-            Debug.Log("Auto-save completed at: " + System.DateTime.Now);
             yield return new WaitForSeconds(saveIntervalInSeconds);
         }
     }
@@ -24,7 +24,6 @@ public class LoadPlayerSave : MonoBehaviour
     private void OnApplicationQuit()
     {
         PlayerSave.ManualSave();
-        Debug.Log("Save on quit completed");
     }
 
     private void OnApplicationPause(bool pauseStatus)
@@ -32,7 +31,12 @@ public class LoadPlayerSave : MonoBehaviour
         if (pauseStatus)
         {
             PlayerSave.ManualSave();
-            Debug.Log("Save on pause completed");
         }
+    }
+
+    [Button]
+    private void ResetSave()
+    {
+        PlayerSave.ResetSaveData();
     }
 }

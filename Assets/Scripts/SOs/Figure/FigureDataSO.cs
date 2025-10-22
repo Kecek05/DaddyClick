@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "FigureDataSO", menuName = "Scriptable Objects/FigureDataSO")]
+[CreateAssetMenu(fileName = "FigureDataSO", menuName = "Scriptable Objects/Figure/FigureDataSO")]
 public class FigureDataSO : ScriptableObject
 {
     public string Name;

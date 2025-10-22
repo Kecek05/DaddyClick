@@ -20,7 +20,7 @@ public class ShelfUIManager : MonoBehaviour
 
     private void PlayerSaveOnOnGainFigure()
     {
-        foreach (var item in PlayerSave.Figures)
+        foreach (var item in PlayerSave.boughtFigures)
         {
             if (item.Value > 0)
             {

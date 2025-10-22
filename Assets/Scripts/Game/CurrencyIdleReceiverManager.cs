@@ -20,14 +20,7 @@ public class CurrencyIdleReceiverManager : MonoBehaviour
     private void PlayerSaveOnOnSaveLoaded()
     {
         float idleTime = (float)(DateTime.Now - PlayerSave.LastPlayedTime).TotalSeconds;
-        float cps = 0;
-        foreach (var figureData in PlayerSave.Figures)
-        {
-            int figureCount = 0;
-            PlayerSave.Figures.TryGetValue(figureData.Key, out figureCount);
-            cps += _figureDataListSO.GetFigureDataSOByType(figureData.Key).CPS * figureCount;
-        }
-        
+        float cps = ClickUtils.GetCPS(_figureDataListSO);
         float idleEarnings = cps * idleTime;
         if (idleEarnings > 0)
         {

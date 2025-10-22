@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class ClickManager : MonoBehaviour
@@ -12,12 +13,16 @@ public class ClickManager : MonoBehaviour
     private float _cps;
     
     public float CPS => _cps;
-    
+
+    private void Awake()
+    {
+        PlayerSave.OnSaveLoaded += PlayerSaveOnOnSaveLoaded;
+    }
+
     private void Start()
     {
         _clickUIManager.OnClick += ClickUIManagerOnOnClick;
         PlayerSave.OnGainFigure += PlayerSaveOnOnGainFigure;
-        PlayerSave.OnSaveLoaded += PlayerSaveOnOnSaveLoaded;
     }
 
     private void PlayerSaveOnOnSaveLoaded()
@@ -59,8 +64,16 @@ public class ClickManager : MonoBehaviour
         DoClick(1);
     }
     
+    [Button]
     private void DoClick(float clickValue) 
     {
         CurrencyManager.AddCurrency(clickValue * MultiplierManager.CurrentMultiplier);
+    }
+    
+    //DEBUG
+    [Button]
+    private void ChangeCurrencyDebug(float value)
+    {
+        CurrencyManager.SetCurrency(value);
     }
 }

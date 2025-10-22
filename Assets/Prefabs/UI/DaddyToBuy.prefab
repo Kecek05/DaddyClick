@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 2415479831086022706}
   - component: {fileID: 3899511728842453754}
   m_Layer: 0
-  m_Name: CPSText
+  m_Name: MultiplierText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +0/s
+  m_text: x0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 3245508953417623760}
   - component: {fileID: 8826703001822198194}
   m_Layer: 0
-  m_Name: FigureToBuy
+  m_Name: DaddyToBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -442,7 +442,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4649496588187321129}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a57c0b9148ee804c8e839eaaa12f6a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 56a1b929e87d70a439062d7227d155c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopItem
   _nameText: {fileID: 2351497998229382062}
