@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a57c0b9148ee804c8e839eaaa12f6a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopItem
-  _figureShopSO: {fileID: 11400000, guid: 95d30b7262ab51e408e3ccc8c5d715f1, type: 2}
+  _figureShopSO: {fileID: 0}
   _nameText: {fileID: 2351497998229382062}
   _costText: {fileID: 7962070598830581507}
   _cPSText: {fileID: 3899511728842453754}

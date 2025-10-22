@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class FigureShopItem : MonoBehaviour
 {
-    [SerializeField] [Required] private FigureShopSO _figureShopSO;
     [SerializeField] [Required] private TextMeshProUGUI _nameText;
     [SerializeField] [Required] private TextMeshProUGUI _costText;
     [SerializeField] [Required] private TextMeshProUGUI _cPSText;
     [SerializeField] [Required] private Button _buyButton;
 
     private float _currentCost;
+    private FigureShopSO _figureShopSO;
     
     private void Awake()
     {
@@ -24,12 +24,11 @@ public class FigureShopItem : MonoBehaviour
                 UpdateCost();
             }
         });
-        
-        SetupItem();
     }
 
-    private void SetupItem()
+    public void SetupItem(FigureShopSO figureShopSO)
     {
+        _figureShopSO = figureShopSO;
         _currentCost = _figureShopSO.Cost;
         _nameText.text = _figureShopSO.FigureData.Name;
         _costText.text = $"${_currentCost}";
@@ -41,4 +40,6 @@ public class FigureShopItem : MonoBehaviour
         _currentCost = _figureShopSO.Cost * _figureShopSO.CostMultiplierCurve.Evaluate(PlayerSave.GetFigureByType(_figureShopSO.FigureData.FigureType));
         _costText.text = $"${_currentCost}";
     }
+    
+    
 }

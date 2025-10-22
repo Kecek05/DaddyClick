@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class FigureShelfItem : MonoBehaviour
 {
-    [SerializeField] [Required] FigureDataSO _figureDataSO;
     [SerializeField] [Required] private TextMeshProUGUI _nameText;
     [SerializeField] [Required] private TextMeshProUGUI _cpsTotalText;
+    private FigureDataSO _figureDataSO;
 
-    public void SetupItem()
+    public void SetupItem(FigureDataSO figureDataSO)
     {
+        _figureDataSO = figureDataSO;
         _nameText.text = _figureDataSO.Name;
-        // _cpsTotalText.text;
+        _cpsTotalText.text = $"{_figureDataSO.CPS}/s";
+    }
+
+    public void UpdateAmount(int amount)
+    {
+        _cpsTotalText.text = $"{_figureDataSO.CPS * amount}/s";
     }
 }

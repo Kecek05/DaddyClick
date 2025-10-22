@@ -14,7 +14,7 @@ public static class PlayerSave
 {
     public static event Action OnGainFigure;
     
-    public static float Money;
+    public static float Clicks;
     public static Dictionary<FigureType, int> Figures = new()
     {
         { FigureType.None, 0 },
@@ -26,13 +26,11 @@ public static class PlayerSave
     {
         Figures[figureType] += 1;
         OnGainFigure?.Invoke();
-        Debug.Log(Figures[figureType]);
     }
     
     public static int GetFigureByType(FigureType figureType)
     {
         Figures.TryGetValue(figureType, out int figureCount);
-        Debug.Log($"Figure: {figureType}, Count: {figureCount}");
         return figureCount;
     }
 }

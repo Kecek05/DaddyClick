@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FigureDataListSO
   Figures:
   - {fileID: 11400000, guid: 9fa48d28b5233dd4e9bba3776c508e4a, type: 2}
+  - {fileID: 11400000, guid: b67d91dec67a93443b91851eb1ad2b78, type: 2}
+  FiguresShop:
+  - {fileID: 11400000, guid: 95d30b7262ab51e408e3ccc8c5d715f1, type: 2}
+  - {fileID: 11400000, guid: 5983af93a7acb9f43a47b939d4510fb5, type: 2}
