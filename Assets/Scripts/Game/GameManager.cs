@@ -3,7 +3,7 @@ using System.Collections;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class ClickManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     //Temp
     public static event Action<float> OnCpsChanged;

@@ -10,7 +10,7 @@ public class HUDUIManager : MonoBehaviour
     private void Awake()
     {
         CurrencyManager.OnCurrencyChanged += CurrencyManagerOnOnCurrencyChanged;
-        ClickManager.OnCpsChanged += ClickManagerOnOnCpsChanged;
+        GameManager.OnCpsChanged += ClickManagerOnOnCpsChanged;
     }
 
     private void Start()
@@ -21,7 +21,7 @@ public class HUDUIManager : MonoBehaviour
     private void OnDestroy()
     {
         CurrencyManager.OnCurrencyChanged -= CurrencyManagerOnOnCurrencyChanged;
-        ClickManager.OnCpsChanged -= ClickManagerOnOnCpsChanged;
+        GameManager.OnCpsChanged -= ClickManagerOnOnCpsChanged;
     }
     
     private void CurrencyManagerOnOnCurrencyChanged(float totalCurrency)

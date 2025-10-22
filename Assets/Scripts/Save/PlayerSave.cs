@@ -20,7 +20,6 @@ public static class PlayerSave
 
     #region PUBLICS
     
-
     public static float Clicks => _clicks;
     public static DateTime LastPlayedTime => _lastPlayedTime;
     
