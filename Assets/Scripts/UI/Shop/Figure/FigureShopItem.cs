@@ -8,7 +8,7 @@ public class FigureShopItem : BaseShopItem
         if (CurrencyManager.CanSpendCurrency(_currentCost))
         {
             CurrencyManager.SpendCurrency(_currentCost);
-            PlayerSave.GainFigure(_figureShopSO.FigureData.FigureType);
+            FigureManager.GainFigure(_figureShopSO.FigureData.FigureType);
             UpdateBought();
         }
     }
@@ -26,7 +26,7 @@ public class FigureShopItem : BaseShopItem
 
     protected override void UpdateBought()
     {
-        _currentCost = _figureShopSO.Cost * _figureShopSO.CostMultiplierCurve.Evaluate(PlayerSave.GetFigureAmountByType(_figureShopSO.FigureData.FigureType));
+        _currentCost = _figureShopSO.Cost * _figureShopSO.CostMultiplierCurve.Evaluate(FigureManager.GetFigureAmountByType(_figureShopSO.FigureData.FigureType));
         _costText.text = $"${_currentCost}";
     }
 }

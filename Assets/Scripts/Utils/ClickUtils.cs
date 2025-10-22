@@ -7,7 +7,7 @@ public static class ClickUtils
         foreach (var figureData in figureDataSO.Figures)
         {
             int figureCount = 0;
-            PlayerSave.boughtFigures.TryGetValue(figureData.FigureType, out figureCount);
+            FigureManager.BoughtFigures.TryGetValue(figureData.FigureType, out figureCount);
             cps += figureData.CPS * figureCount;
         }
 

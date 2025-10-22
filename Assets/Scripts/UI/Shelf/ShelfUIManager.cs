@@ -10,17 +10,17 @@ public class ShelfUIManager : MonoBehaviour
     private Dictionary<FigureType, FigureShelfItem>  _figureShelfItems = new Dictionary<FigureType, FigureShelfItem>();
     private void Start()
     {
-        PlayerSave.OnGainFigure += PlayerSaveOnOnGainFigure;
+        FigureManager.OnGainFigure += PlayerSaveOnOnGainFigure;
     }
 
     private void OnDestroy()
     {
-        PlayerSave.OnGainFigure -= PlayerSaveOnOnGainFigure;
+        FigureManager.OnGainFigure -= PlayerSaveOnOnGainFigure;
     }
 
     private void PlayerSaveOnOnGainFigure()
     {
-        foreach (var item in PlayerSave.boughtFigures)
+        foreach (var item in FigureManager.BoughtFigures)
         {
             if (item.Value > 0)
             {

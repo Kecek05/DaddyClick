@@ -22,7 +22,7 @@ public class ClickManager : MonoBehaviour
     private void Start()
     {
         _clickUIManager.OnClick += ClickUIManagerOnOnClick;
-        PlayerSave.OnGainFigure += PlayerSaveOnOnGainFigure;
+        FigureManager.OnGainFigure += PlayerSaveOnOnGainFigure;
     }
 
     private void PlayerSaveOnOnSaveLoaded()
@@ -34,7 +34,7 @@ public class ClickManager : MonoBehaviour
     private void OnDestroy()
     {
         _clickUIManager.OnClick -= ClickUIManagerOnOnClick;
-        PlayerSave.OnGainFigure -= PlayerSaveOnOnGainFigure;
+        FigureManager.OnGainFigure -= PlayerSaveOnOnGainFigure;
         PlayerSave.OnSaveLoaded -= PlayerSaveOnOnSaveLoaded;
     }
 
