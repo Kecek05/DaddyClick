@@ -7,10 +7,14 @@ public class HUDUIManager : MonoBehaviour
     [SerializeField] [Required] private TextMeshProUGUI _currencyText;
     [SerializeField] [Required] private TextMeshProUGUI _cpsText;
 
-    private void Start()
+    private void Awake()
     {
         CurrencyManager.OnCurrencyChanged += CurrencyManagerOnOnCurrencyChanged;
         ClickManager.OnCpsChanged += ClickManagerOnOnCpsChanged;
+    }
+
+    private void Start()
+    {
         CurrencyManagerOnOnCurrencyChanged(PlayerSave.Clicks);
     }
 

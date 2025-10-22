@@ -12,15 +12,19 @@ public class FiguresSaveData
 public static class PlayerSave
 {
     public static event Action OnGainFigure;
+    public static event Action OnSaveLoaded;
     
     private const string CLICKS_KEY = "PlayerClicks";
     private const string FIGURES_KEY = "PlayerFigures";
+    private const string LAST_PLAYED_TIME_KEY = "LastPlayedTime";
     
     private static Dictionary<FigureType, int> _figures = new();
     private static float _clicks = 0f;
+    private static DateTime _lastPlayedTime = DateTime.MinValue;
     
     public static Dictionary<FigureType, int> Figures => _figures;
     public static float Clicks => _clicks;
+    public static DateTime LastPlayedTime => _lastPlayedTime;
 
     public static void LoadPlayerSave()
     {
@@ -47,11 +51,17 @@ public static class PlayerSave
                 }
             }
         }
-
-        foreach (var value in _figures)
+        
+        // Load Last Played Time
+        if (PlayerPrefs.HasKey(LAST_PLAYED_TIME_KEY))
         {
-            Debug.Log(value.Key + " : " + value.Value);
+            string lastPlayedTimeString = PlayerPrefs.GetString(LAST_PLAYED_TIME_KEY);
+            if (DateTime.TryParse(lastPlayedTimeString, out DateTime loadedTime))
+            {
+                _lastPlayedTime = loadedTime;
+            }
         }
+        OnSaveLoaded?.Invoke();
     }
 
     public static void SavePlayerData()
@@ -65,11 +75,15 @@ public static class PlayerSave
         {
             figuresData.figureTypes.Add(figurePair.Key);
             figuresData.figureCounts.Add(figurePair.Value);
-            Debug.Log(figurePair.Key + " : " + figurePair.Value);
         }
         
         string figuresJson = JsonUtility.ToJson(figuresData);
         PlayerPrefs.SetString(FIGURES_KEY, figuresJson);
+        
+        // Save Last Played Time
+        _lastPlayedTime = DateTime.Now;
+        PlayerPrefs.SetString(LAST_PLAYED_TIME_KEY, _lastPlayedTime.ToString());
+        
         PlayerPrefs.Save();
     }
 
@@ -77,7 +91,6 @@ public static class PlayerSave
     {
         _figures[figureType] += 1;
         OnGainFigure?.Invoke();
-        SavePlayerData();
     }
     
     public static int GetFigureAmountByType(FigureType figureType)
@@ -89,6 +102,10 @@ public static class PlayerSave
     public static void SetClicks(float amount)
     {
         _clicks = amount;
+    }
+    
+    public static void ManualSave()
+    {
         SavePlayerData();
     }
 }

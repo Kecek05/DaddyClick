@@ -17,6 +17,11 @@ public class ClickManager : MonoBehaviour
     {
         _clickUIManager.OnClick += ClickUIManagerOnOnClick;
         PlayerSave.OnGainFigure += PlayerSaveOnOnGainFigure;
+        PlayerSave.OnSaveLoaded += PlayerSaveOnOnSaveLoaded;
+    }
+
+    private void PlayerSaveOnOnSaveLoaded()
+    {
         PlayerSaveOnOnGainFigure();
         StartCoroutine(AutoClicker());
     }
@@ -25,17 +30,12 @@ public class ClickManager : MonoBehaviour
     {
         _clickUIManager.OnClick -= ClickUIManagerOnOnClick;
         PlayerSave.OnGainFigure -= PlayerSaveOnOnGainFigure;
+        PlayerSave.OnSaveLoaded -= PlayerSaveOnOnSaveLoaded;
     }
 
     private void PlayerSaveOnOnGainFigure()
     {
-        _cps = 0;
-        foreach (var figureData in _figuresDataSO.Figures)
-        {
-            int figureCount = 0;
-            PlayerSave.Figures.TryGetValue(figureData.FigureType, out figureCount);
-            _cps += figureData.CPS * figureCount;
-        }
+        _cps = ClickUtils.GetCPS(_figuresDataSO);
         OnCpsChanged?.Invoke(_cps);
     }
 
