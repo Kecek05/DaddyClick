@@ -30,6 +30,8 @@ public static class DaddyManager
         {
             _boughtDaddies.Add(daddyType, false);
         }
+
+        _boughtDaddies[DaddyType.InitialDaddy] = true;
         
         if (PlayerPrefs.HasKey(DADDIES_KEY))
         {

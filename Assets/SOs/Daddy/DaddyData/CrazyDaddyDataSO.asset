@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CrazyDaddyDataSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyDataSO
   Name: Crazy Daddy
-  DaddyType: 1
-  Icon: {fileID: 0}
+  DaddyType: 2
+  Icon: {fileID: 21300000, guid: a4986ae7da29871418edd9f0f9a7a90c, type: 3}
   Stars: 2
-  Multiplier: 0.2
+  Multiplier: 1

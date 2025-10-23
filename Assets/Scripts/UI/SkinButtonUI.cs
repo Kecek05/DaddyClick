@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class SkinButtonUI : MonoBehaviour
     [Title("References")]
     [SerializeField] [Required] private Button _button;
     [SerializeField] [Required] private Image _image;
+    [SerializeField] [Required] private TextMeshProUGUI _nameText;
     [SerializeField] [Required] private GameObject _starPrefab;
     [SerializeField] [Required] private Transform _starParent;
 
@@ -17,6 +19,7 @@ public class SkinButtonUI : MonoBehaviour
     {
         _daddyData = daddyData;
         _skinsUI = skinsUI;
+        _nameText.text = daddyData.Name;
         _image.sprite = _daddyData.Icon;
         HandleLocked(unlocked);
         _button.onClick.AddListener(() =>

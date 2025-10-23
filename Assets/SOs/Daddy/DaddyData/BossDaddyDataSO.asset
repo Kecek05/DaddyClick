@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: BossDaddyDataSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyDataSO
   Name: Boss Daddy
-  DaddyType: 0
-  Icon: {fileID: 0}
-  Material: {fileID: 0}
+  DaddyType: 1
+  Icon: {fileID: 21300000, guid: d872f3ade3df0de42b6811a7f985d58e, type: 3}
   Stars: 5
-  Multiplier: 10
+  Multiplier: 100

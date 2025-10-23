@@ -85,7 +85,7 @@ public static class PlayerSave
         ClickManager.ResetSave();
         PlayerPrefs.DeleteKey(LAST_PLAYED_TIME_KEY);
         _lastPlayedTime = DateTime.MinValue;
-        
+        Debug.Log($"Reset Save Data");
         OnSaveLoaded?.Invoke();
     }
     

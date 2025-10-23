@@ -8,9 +8,9 @@ public enum FigureType
 
 public enum DaddyType
 {
+    InitialDaddy,
     BossDaddy,
     CrazyDaddy,
-    InitialDaddy,
     DaddyJunino,
     DrunkDaddy,
     StrudelDaddy,

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
@@ -50,7 +51,11 @@ public class SkinsUI : MonoBehaviour
 
     private void SetupButtons()
     {
-        foreach (var daddyData in DaddyManager.BoughtDaddies)
+        var sortedDaddies = DaddyManager.BoughtDaddies
+            .OrderBy(d => _daddyDataList.GetDaddyDataSOByType(d.Key).Stars)
+            .ThenBy(d => d.Key);
+        
+        foreach (var daddyData in sortedDaddies)
         {
             SkinButtonUI daddyButton = Instantiate(_skinButtonPrefab, _uiContentParent).GetComponent<SkinButtonUI>();
             daddyButton.Setup(_daddyDataList.GetDaddyDataSOByType(daddyData.Key), this, daddyData.Value);

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -22,7 +23,11 @@ public class ShelfUIManager : MonoBehaviour
     
     private void PlayerSaveOnOnSaveLoaded()
     {
-        foreach (var figureItem in FigureManager.BoughtFigures)
+        var sortedFigures = FigureManager.BoughtFigures
+            .OrderBy(f => _figureDataListSO.GetFigureDataSOByType(f.Key).Stars)
+            .ThenBy(f => f.Key);
+        
+        foreach (var figureItem in sortedFigures)
         {
             PlayerSaveOnOnGainFigure(figureItem.Key, figureItem.Value);
         }

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DaddyDataSO
   Name: Polo Daddy
   DaddyType: 11
-  Icon: {fileID: 0}
-  Stars: 0
-  Multiplier: 0
+  Icon: {fileID: 21300000, guid: 34ad0ab017ab69244a527493408c777a, type: 3}
+  Stars: 5
+  Multiplier: 50

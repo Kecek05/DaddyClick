@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using System.Linq;
 
 public class FiguresShopUI : BaseShopUI
 {
@@ -7,7 +8,11 @@ public class FiguresShopUI : BaseShopUI
 
     protected override void SetupUI()
     {
-        foreach (FigureShopSO figureDataSO in _figureDataListSO.FiguresShop)
+        var sortedFigures = _figureDataListSO.FiguresShop
+            .OrderBy(f => f.FigureData.Stars)
+            .ThenBy(f => f.Cost);
+        
+        foreach (FigureShopSO figureDataSO in sortedFigures)
         {
             FigureShopItem figureShopItem = Instantiate(_itemPrefab, _shopContentParent).GetComponent<FigureShopItem>();
             figureShopItem.SetupItem(figureDataSO);

@@ -24,6 +24,7 @@ public class DaddyShopItem : BaseShopItem
         _costText.text = $"${MathK.FormatNumberWithSuffix(_clickCost)}";
         _valueText.text = $"+x{_daddyShopSO.DaddyData.Multiplier}";
         _itemImage.sprite = _daddyShopSO.DaddyData.Icon;
+        _itemImage.color = Color.black;
         for (int i = 0; i < _daddyShopSO.DaddyData.Stars; i++)
         {
             Instantiate(_starPrefab, _starParent);
@@ -37,6 +38,7 @@ public class DaddyShopItem : BaseShopItem
     protected override void UpdateBought()
     {
         _costText.text = "Unlocked";
+        _itemImage.color = Color.white;
         _buyButton.interactable = false;
     }
 }

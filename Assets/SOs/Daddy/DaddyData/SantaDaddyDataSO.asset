@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DaddyDataSO
   Name: Santa Daddy
   DaddyType: 13
-  Icon: {fileID: 0}
-  Stars: 1
-  Multiplier: 0.2
+  Icon: {fileID: 21300000, guid: d5bc0f02e3f9c7b4bb94397fb96e2faa, type: 3}
+  Stars: 4
+  Multiplier: 10
