@@ -2370,7 +2370,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc29cc2749fd569428d0f79cb2045279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadPlayerSave
-  saveIntervalInSeconds: 60
 --- !u!1 &794237574
 GameObject:
   m_ObjectHideFlags: 0
@@ -5641,21 +5640,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: -1
   m_TargetDisplay: 0
---- !u!114 &242009108863675027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9093401907777294817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.3019608}
-  m_EffectDistance: {x: 0, y: -11}
-  m_UseGraphicAlpha: 1
 --- !u!222 &425134021818956083
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5792,7 +5776,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 09feaf45571f841b3b9fad1e25eb2304, type: 3}
+  m_Sprite: {fileID: -2093917443, guid: 72746deb9c8f4e8468d3bcff0a1ee6fb, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5906,7 +5890,7 @@ MonoBehaviour:
   m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 428, y: 528}
+  m_CellSize: {x: 428, y: 547}
   m_Spacing: {x: 50, y: 35}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -7201,10 +7185,10 @@ RectTransform:
   - {fileID: 5400832339363190945}
   m_Father: {fileID: 1160916297}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -761.9732}
-  m_SizeDelta: {x: 0, y: 1235.3464}
+  m_AnchoredPosition: {x: 0, y: -71.6499}
+  m_SizeDelta: {x: 0, y: -143.29993}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6001117620693315816
 MonoBehaviour:
@@ -7979,7 +7963,6 @@ GameObject:
   - component: {fileID: 5530977301963383245}
   - component: {fileID: 3462259611296230413}
   - component: {fileID: 1493679119475450972}
-  - component: {fileID: 242009108863675027}
   - component: {fileID: 5348914357392059626}
   m_Layer: 5
   m_Name: Shelf
