@@ -9,6 +9,9 @@ public abstract class BaseShopItem : MonoBehaviour
     [SerializeField] [Required] protected TextMeshProUGUI _nameText;
     [SerializeField] [Required] protected TextMeshProUGUI _costText;
     [SerializeField] [Required] protected TextMeshProUGUI _valueText;
+    [SerializeField] [Required] protected Image _itemImage;
+    [SerializeField] [Required] protected GameObject _starPrefab;
+    [SerializeField] [Required] protected Transform _starParent;
     [SerializeField] [Required] protected Button _buyButton;
 
     protected float _clickCost;

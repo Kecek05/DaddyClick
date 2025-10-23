@@ -18,8 +18,13 @@ public class DaddyShopItem : BaseShopItem
         _daddyShopSO = daddyShopSO;
         _clickCost = _daddyShopSO.Cost;
         _nameText.text = _daddyShopSO.DaddyData.Name;
-        _costText.text = $"${MathK.FormatNumber(_clickCost)}";
-        _valueText.text = $"+x{_daddyShopSO.DaddyData.Multiplier}";
+        _costText.text = $"${MathK.FormatNumberWithSuffix(_clickCost)}";
+        _valueText.text = $"+x{MathK.FormatNumberWithSuffix(_daddyShopSO.DaddyData.Multiplier)}";
+        _itemImage.sprite = _daddyShopSO.DaddyData.Icon;
+        for (int i = 0; i < _daddyShopSO.DaddyData.Stars; i++)
+        {
+            Instantiate(_starPrefab, _starParent);
+        }
         
         if (DaddyManager.GetDaddyUnlockStatusByType(_daddyShopSO.DaddyData.DaddyType))
             UpdateBought();

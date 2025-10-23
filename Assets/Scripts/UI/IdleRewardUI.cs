@@ -9,6 +9,7 @@ public class IdleRewardUI : MonoBehaviour
     private Button _closeButton;
     
     [SerializeField] [Required] TextMeshProUGUI _clickValueText;
+    [SerializeField] [Required] TextMeshProUGUI _maxIdleEarningText;
     [SerializeField] [Required] Slider _clickValueSlider;
     [SerializeField] [Required] GameObject _idleRewardPanel;
     
@@ -26,7 +27,8 @@ public class IdleRewardUI : MonoBehaviour
 
     private void CurrencyIdleReceiverManagerOnOnCurrencyIdleReceived(float currency, float maxPossibleEarnings)
     {
-        _clickValueText.text = $"{MathK.FormatNumber(currency)}";
+        _clickValueText.text = $"{MathK.FormatNumberWithSuffix(currency)}";
+        _maxIdleEarningText.text = $"{MathK.FormatNumberWithSuffix(maxPossibleEarnings)}";
         _clickValueSlider.value = currency / maxPossibleEarnings;
         OpenUI();
     }

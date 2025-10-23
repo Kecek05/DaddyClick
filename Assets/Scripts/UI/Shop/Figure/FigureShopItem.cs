@@ -18,7 +18,12 @@ public class FigureShopItem : BaseShopItem
         _figureShopSO = figureShopSO;
         _clickCost = _figureShopSO.Cost;
         _nameText.text = _figureShopSO.FigureData.Name;
-        _valueText.text = $"+{_figureShopSO.FigureData.CPS}/s";
+        _valueText.text = $"+{MathK.FormatNumberWithSuffix(_figureShopSO.FigureData.CPS)}/s";
+        _itemImage.sprite = _figureShopSO.FigureData.Icon;
+        for (int i = 0; i < _figureShopSO.FigureData.Stars; i++)
+        {
+            Instantiate(_starPrefab, _starParent);
+        }
         
         UpdateBought();
     }
@@ -26,6 +31,6 @@ public class FigureShopItem : BaseShopItem
     protected override void UpdateBought()
     {
         _clickCost = _figureShopSO.Cost * _figureShopSO.CostMultiplierCurve.Evaluate(FigureManager.GetFigureAmountByType(_figureShopSO.FigureData.FigureType));
-        _costText.text = $"${MathK.FormatNumber(_clickCost)}";
+        _costText.text = $"${MathK.FormatNumberWithSuffix(_clickCost)}";
     }
 }

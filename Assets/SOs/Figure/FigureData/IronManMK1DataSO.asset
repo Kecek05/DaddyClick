@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FigureDataSO
   Name: IronManMK1
   FigureType: 1
-  Icon: {fileID: 21300000, guid: 38c4110a9626f4159afaf5cced460f08, type: 3}
+  Icon: {fileID: 866593195527299979, guid: 70a9f5c297790e849b849f4ddc1a1dad, type: 3}
+  Stars: 1
   CPS: 5

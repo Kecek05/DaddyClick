@@ -4,11 +4,25 @@ using UnityEngine;
 
 public class SaveHandler : MonoBehaviour
 {
-    [SerializeField] private float saveIntervalInSeconds = 60f; // Save every 60 seconds (1 minute)
+    private WaitForSeconds _waitForSeconds = new WaitForSeconds(60f);
+
+    private void Awake()
+    {
+        PlayerSave.OnSaveLoaded += PlayerSaveOnOnSaveLoaded;
+    }
+
+    private void OnDestroy()
+    {
+        PlayerSave.OnSaveLoaded -= PlayerSaveOnOnSaveLoaded;
+    }
 
     private void Start()
     {
         PlayerSave.LoadPlayerSave();
+    }
+
+    private void PlayerSaveOnOnSaveLoaded()
+    {
         StartCoroutine(AutoSaveCoroutine());
     }
 
@@ -16,8 +30,8 @@ public class SaveHandler : MonoBehaviour
     {
         while (true)
         {
+            yield return _waitForSeconds;
             PlayerSave.ManualSave();
-            yield return new WaitForSeconds(saveIntervalInSeconds);
         }
     }
 

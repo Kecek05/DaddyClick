@@ -15,4 +15,5 @@ MonoBehaviour:
   Name: Cool Daddy
   DaddyType: 1
   Icon: {fileID: 21300000, guid: ff6d06c5a07434d9b8edaa92176cd86f, type: 3}
+  Stars: 1
   Multiplier: 0.5

@@ -31,9 +31,9 @@ public class CurrencyIdleReceiverManager : MonoBehaviour
         float idleEarnings = cps * idleTime;
         if (idleEarnings > 0)
         {
-            idleEarnings = Mathf.Min(idleEarnings, maxIdleEarnings);
+            idleEarnings = Mathf.Min(idleEarnings, maxIdleEarnings * ClickManager.CurrentMultiplier);
             ClickManager.AddClicks(idleEarnings);
-            OnCurrencyIdleReceived?.Invoke(idleEarnings, maxIdleEarnings);
+            OnCurrencyIdleReceived?.Invoke(idleEarnings, maxIdleEarnings * ClickManager.CurrentMultiplier);
         }
     }
 }

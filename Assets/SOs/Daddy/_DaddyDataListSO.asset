@@ -15,6 +15,8 @@ MonoBehaviour:
   Daddies:
   - {fileID: 11400000, guid: 2b2c8647f0c82cf458581dbe666c8010, type: 2}
   - {fileID: 11400000, guid: d5cd13c75e93fa14ba221f83d2ab14a5, type: 2}
+  - {fileID: 11400000, guid: c52b5d94756b1b1439cb0bcfa1add662, type: 2}
   DaddiesShop:
   - {fileID: 11400000, guid: 41e7b118cffde2f44a0a33d8f9ebfef6, type: 2}
   - {fileID: 11400000, guid: 268aedf0c86c6064ba7fc5aee2a2be98, type: 2}
+  - {fileID: 11400000, guid: 73f6c308015dcad44b2ba0a1441c713c, type: 2}

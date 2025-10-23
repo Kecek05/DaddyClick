@@ -7,7 +7,8 @@ public class SkinButtonUI : MonoBehaviour
     [Title("References")]
     [SerializeField] [Required] private Button _button;
     [SerializeField] [Required] private Image _image;
-
+    [SerializeField] [Required] private GameObject _starPrefab;
+    [SerializeField] [Required] private Transform _starParent;
 
     private DaddyDataSO _daddyData;
     private SkinsUI _skinsUI;
@@ -22,6 +23,11 @@ public class SkinButtonUI : MonoBehaviour
         {
             _skinsUI.SelectSkin(_daddyData.Icon, _daddyData.DaddyType);
         });
+        
+        for (int i = 0; i < _daddyData.Stars; i++)
+        {
+            Instantiate(_starPrefab, _starParent);
+        }
     }
 
     public void HandleLocked(bool unlocked)
