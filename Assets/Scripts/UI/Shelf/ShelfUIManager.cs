@@ -24,8 +24,8 @@ public class ShelfUIManager : MonoBehaviour
     private void PlayerSaveOnOnSaveLoaded()
     {
         var sortedFigures = FigureManager.BoughtFigures
-            .OrderBy(f => _figureDataListSO.GetFigureDataSOByType(f.Key).Stars)
-            .ThenBy(f => f.Key);
+            .OrderByDescending(f => _figureDataListSO.GetFigureDataSOByType(f.Key).Stars)
+            .ThenByDescending(f => f.Value);
         
         foreach (var figureItem in sortedFigures)
         {
@@ -41,7 +41,23 @@ public class ShelfUIManager : MonoBehaviour
         {
             CreateShelfItem(type);
         }
-        UpdateFigureItem(type,figureCount);
+        UpdateFigureItem(type, figureCount);
+        
+        ReorderShelfItems();
+    }
+    
+    private void ReorderShelfItems()
+    {
+        var sortedItems = _figureShelfItems
+            .OrderByDescending(item => _figureDataListSO.GetFigureDataSOByType(item.Key).Stars)
+            .ThenByDescending(item => FigureManager.BoughtFigures[item.Key]);
+        
+        int siblingIndex = 0;
+        foreach (var item in sortedItems)
+        {
+            item.Value.transform.SetSiblingIndex(siblingIndex);
+            siblingIndex++;
+        }
     }
 
     private void CreateShelfItem(FigureType figureType)
