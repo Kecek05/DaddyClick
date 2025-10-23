@@ -10,7 +10,8 @@ public class FiguresShopUI : BaseShopUI
     {
         var sortedFigures = _figureDataListSO.FiguresShop
             .OrderBy(f => f.FigureData.Stars)
-            .ThenBy(f => f.Cost);
+            .ThenBy(f => f.Cost)
+            .ThenBy(f => f.FigureData.Name);
         
         foreach (FigureShopSO figureDataSO in sortedFigures)
         {

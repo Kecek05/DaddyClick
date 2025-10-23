@@ -17,7 +17,11 @@ public static class MathK
     public static string FormatNumberWithSuffix(float number)
     {
         if (number < 1000)
-            return number.ToString("F0");
+        {
+            // For numbers below 1000, show decimal only if not .0
+            string format = (number % 1 == 0) ? "F0" : "F1";
+            return number.ToString(format);
+        }
 
         int suffixIndex = 0;
         while (number >= 1000 && suffixIndex < suffixes.Length - 1)
@@ -25,6 +29,9 @@ public static class MathK
             number /= 1000f;
             suffixIndex++;
         }
-        return number.ToString("F1") + suffixes[suffixIndex];
+        
+        // Show decimal only if not .0
+        string numberFormat = (number % 1 == 0) ? "F0" : "F1";
+        return number.ToString(numberFormat) + suffixes[suffixIndex];
     }
 }

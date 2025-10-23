@@ -25,7 +25,8 @@ public class ShelfUIManager : MonoBehaviour
     {
         var sortedFigures = FigureManager.BoughtFigures
             .OrderByDescending(f => _figureDataListSO.GetFigureDataSOByType(f.Key).Stars)
-            .ThenByDescending(f => f.Value);
+            .ThenByDescending(f => f.Value)
+            .ThenBy(f => _figureDataListSO.GetFigureDataSOByType(f.Key).Name);
         
         foreach (var figureItem in sortedFigures)
         {
@@ -50,7 +51,8 @@ public class ShelfUIManager : MonoBehaviour
     {
         var sortedItems = _figureShelfItems
             .OrderByDescending(item => _figureDataListSO.GetFigureDataSOByType(item.Key).Stars)
-            .ThenByDescending(item => FigureManager.BoughtFigures[item.Key]);
+            .ThenByDescending(item => FigureManager.BoughtFigures[item.Key])
+            .ThenBy(item => _figureDataListSO.GetFigureDataSOByType(item.Key).Name);
         
         int siblingIndex = 0;
         foreach (var item in sortedItems)

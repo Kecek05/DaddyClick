@@ -52,8 +52,10 @@ public class SkinsUI : MonoBehaviour
     private void SetupButtons()
     {
         var sortedDaddies = DaddyManager.BoughtDaddies
-            .OrderBy(d => _daddyDataList.GetDaddyDataSOByType(d.Key).Stars)
-            .ThenBy(d => d.Key);
+            .OrderBy(d => !d.Value) // Unlocked (true) comes before locked (false)
+            .ThenBy(d => _daddyDataList.GetDaddyDataSOByType(d.Key).Stars)
+            .ThenBy(d => d.Key)
+            .ThenBy(d => _daddyDataList.GetDaddyDataSOByType(d.Key).Name);
         
         foreach (var daddyData in sortedDaddies)
         {

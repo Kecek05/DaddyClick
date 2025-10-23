@@ -10,7 +10,8 @@ public class DaddiesShopUI : BaseShopUI
     {
         var sortedDaddies = _daddyDataListSO.DaddiesShop
             .OrderBy(d => d.DaddyData.Stars)
-            .ThenBy(d => d.Cost);
+            .ThenBy(d => d.Cost)
+            .ThenBy(d => d.DaddyData.Name);
         
         foreach (DaddyShopSO daddyShopSO in sortedDaddies)
         {
