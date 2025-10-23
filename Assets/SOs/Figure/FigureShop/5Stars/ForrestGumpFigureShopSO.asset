@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ForrestGumpFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: 1ecc938d09d94414794e1ab1c3c13278, type: 2}
-  Cost: 0
+  Cost: 1000000
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

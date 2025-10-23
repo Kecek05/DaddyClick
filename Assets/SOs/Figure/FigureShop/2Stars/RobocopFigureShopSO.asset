@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RobocopFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: 7496be69c1adbb241943468e489526a2, type: 2}
-  Cost: 0
+  Cost: 750
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

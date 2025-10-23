@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WalterWhiteFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: e18a9f117d871e44b854055312e52258, type: 2}
-  Cost: 0
+  Cost: 800000
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

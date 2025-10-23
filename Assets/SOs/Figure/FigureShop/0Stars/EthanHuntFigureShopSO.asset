@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EthanHuntFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: ecbee9d61a4c23d4c9681e521e3f6fbf, type: 2}
-  Cost: 0
+  Cost: 30
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

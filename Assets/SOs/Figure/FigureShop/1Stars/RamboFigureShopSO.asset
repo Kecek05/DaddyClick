@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RamboFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: 9221477876c43d442b6fe0e49cd171b7, type: 2}
-  Cost: 0
+  Cost: 250
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

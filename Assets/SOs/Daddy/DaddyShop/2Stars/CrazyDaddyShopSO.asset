@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6e2cea488733804785bd79d2cf91400, type: 3}
-  m_Name: DrunkDaddyShopSO
+  m_Name: CrazyDaddyShopSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyShopSO
-  DaddyData: {fileID: 11400000, guid: c5d4e6b2f20e2a5419eeb31bd5c26406, type: 2}
-  Cost: 1
+  DaddyData: {fileID: 11400000, guid: 4f4347e259c56fa4b8d991674b7780eb, type: 2}
+  Cost: 10000
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

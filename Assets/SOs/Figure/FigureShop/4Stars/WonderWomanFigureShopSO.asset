@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WonderWomanFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: f016b9b9e9aba3040a7926d286c09790, type: 2}
-  Cost: 0
+  Cost: 200000
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

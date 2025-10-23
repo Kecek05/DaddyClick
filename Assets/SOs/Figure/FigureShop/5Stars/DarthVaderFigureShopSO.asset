@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DarthVaderFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: 9c2985726b5301b4fbca89c568487036, type: 2}
-  Cost: 0
+  Cost: 2000000
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: C3POR2D2FigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: a93716ddbc97206448665c97b67444bf, type: 2}
-  Cost: 0
+  Cost: 100
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

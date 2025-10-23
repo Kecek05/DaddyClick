@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SpidermanFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: 0c70c2d096df47f44a2197b9c8c85f4d, type: 2}
-  Cost: 0
+  Cost: 130000
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

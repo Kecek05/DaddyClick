@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IndianaJonesDestinyFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: 79e6482e4f16bfb49b99a8c98c725f04, type: 2}
-  Cost: 0
+  Cost: 70000
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:
