@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6da0c21b80efda84188912ce510ee1ca, type: 3}
-  m_Name: SizeBehavior
-  m_EditorClassIdentifier: Febucci.TextAnimator.Runtime::Febucci.UI.Effects.SizeBehavior
-  tagID: incr
-  baseAmplitude: 1.21
+  m_Script: {fileID: 11500000, guid: 99de7ce7cdaed2d42b0bd233e69e67db, type: 3}
+  m_Name: TitleWaveBehavior
+  m_EditorClassIdentifier: Febucci.TextAnimator.Runtime::Febucci.UI.Effects.WaveBehavior
+  tagID: Titlewave
+  baseAmplitude: 1.1
   baseFrequency: 1
-  baseWaveSize: 0.36
+  baseWaveSize: 0.207
