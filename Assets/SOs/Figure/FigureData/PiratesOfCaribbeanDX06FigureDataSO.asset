@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Pirates of Caribbean DX06
   FigureType: 19
   Icon: {fileID: 21300000, guid: 8dbf4bc0cefebe145aaec51da6feb40e, type: 3}
-  Stars: 0
-  CPS: 0
+  Stars: 2
+  CPS: 7.5

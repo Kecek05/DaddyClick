@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Freddy Krueger
   FigureType: 6
   Icon: {fileID: 21300000, guid: 3066df2291a693140be609485a9dc1b3, type: 3}
-  Stars: 0
-  CPS: 0
+  Stars: 2
+  CPS: 7

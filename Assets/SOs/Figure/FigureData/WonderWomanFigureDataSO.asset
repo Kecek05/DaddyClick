@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Wonder Woman
   FigureType: 28
   Icon: {fileID: 21300000, guid: d3cd66906b04e7c4fab7a5c2a54b4f68, type: 3}
-  Stars: 0
-  CPS: 0
+  Stars: 4
+  CPS: 520

@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Michael Myers
   FigureType: 15
   Icon: {fileID: 21300000, guid: 416be2c6c121c3b448086669ed60833d, type: 3}
-  Stars: 0
-  CPS: 0
+  Stars: 2
+  CPS: 10

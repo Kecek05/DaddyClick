@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: JOKER
   FigureType: 10
   Icon: {fileID: 21300000, guid: 1235b9dfece872a41ae7e4fec454697c, type: 3}
-  Stars: 0
-  CPS: 0
+  Stars: 5
+  CPS: 5000

@@ -36,7 +36,7 @@ public static class PlayerSave
 
     private static void LoadSelectedSkin()
     {
-        _selectedSkinType = (DaddyType)PlayerPrefs.GetInt(SKIN_KEY, 1);
+        _selectedSkinType = (DaddyType)PlayerPrefs.GetInt(SKIN_KEY, 0);
     }
     
     private static void LoadLastPlayedTime()
@@ -84,6 +84,7 @@ public static class PlayerSave
         DaddyManager.ResetSave();
         ClickManager.ResetSave();
         PlayerPrefs.DeleteKey(LAST_PLAYED_TIME_KEY);
+        _selectedSkinType = DaddyType.InitialDaddy;
         _lastPlayedTime = DateTime.MinValue;
         Debug.Log($"Reset Save Data");
         OnSaveLoaded?.Invoke();

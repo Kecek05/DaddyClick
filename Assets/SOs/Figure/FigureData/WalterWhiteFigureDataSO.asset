@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Walter White
   FigureType: 26
   Icon: {fileID: 21300000, guid: 6308e661df82eb7488909c902f9042d2, type: 3}
-  Stars: 0
-  CPS: 0
+  Stars: 5
+  CPS: 3500

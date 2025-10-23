@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Death Trooper
   FigureType: 3
   Icon: {fileID: 21300000, guid: c197f4ef57808ce4b8bb42a7d63932f1, type: 3}
-  Stars: 0
-  CPS: 0
+  Stars: 4
+  CPS: 100

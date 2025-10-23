@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Tony Stark
   FigureType: 25
   Icon: {fileID: 21300000, guid: b989c63fcda562c40bf1f5d9517b1e61, type: 3}
-  Stars: 0
-  CPS: 0
+  Stars: 1
+  CPS: 3
