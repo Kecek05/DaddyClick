@@ -1,7 +1,10 @@
 
+using UnityEngine;
+
 public class DaddyShopItem : BaseShopItem
 {
     private DaddyShopSO _daddyShopSO;
+    private Material _defaultMaterial;
 
     protected override void OnButtonClick()
     {
