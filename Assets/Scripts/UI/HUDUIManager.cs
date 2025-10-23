@@ -24,16 +24,16 @@ public class HUDUIManager : MonoBehaviour
 
     private void ClickManagerOnOnCpsChanged(float newCps)
     {
-        _cpsText.text = $"per second: {MathK.FormatNumber(newCps)}";
+        _cpsText.text = $"<CPSswing>{MathK.FormatNumber(newCps)}</CPSswing>/s";
     }
 
     private void ClickManagerOnOnClickChanged(float clicks)
     {
-        _currencyText.text = $"Clicks: {MathK.FormatNumber(clicks)}";
+        _currencyText.text = $"<coinBounce>{MathK.FormatNumber(clicks)}</coinBounce>";
     }
 
     private void ClickManagerOnOnMultiplierChanged(float multiplier)
     {
-        _multiplierText.text = $"Multiplier: x{MathK.FormatNumber(multiplier)}";    
+        _multiplierText.text = $"<Multiplierincr>x{MathK.FormatNumber(multiplier)}</Multiplierincr>";    
     }
 }
