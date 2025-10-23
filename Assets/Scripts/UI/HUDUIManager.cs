@@ -9,28 +9,26 @@ public class HUDUIManager : MonoBehaviour
 
     private void Awake()
     {
-        CurrencyManager.OnCurrencyChanged += CurrencyManagerOnOnCurrencyChanged;
-        GameManager.OnCpsChanged += ClickManagerOnOnCpsChanged;
+        ClickManager.OnClickChanged += ClickManagerOnOnClickChanged;
+        ClickManager.OnCpsChanged += ClickManagerOnOnCpsChanged;
     }
-
-    private void Start()
-    {
-        CurrencyManagerOnOnCurrencyChanged(PlayerSave.Clicks);
-    }
-
+    
     private void OnDestroy()
     {
-        CurrencyManager.OnCurrencyChanged -= CurrencyManagerOnOnCurrencyChanged;
-        GameManager.OnCpsChanged -= ClickManagerOnOnCpsChanged;
+        ClickManager.OnClickChanged -= ClickManagerOnOnClickChanged;
+        ClickManager.OnCpsChanged -= ClickManagerOnOnCpsChanged;
     }
     
-    private void CurrencyManagerOnOnCurrencyChanged(float totalCurrency)
-    {
-        _currencyText.text = $"Clicks: {totalCurrency}";
-    }
-    
+
     private void ClickManagerOnOnCpsChanged(float newCps)
     {
-        _cpsText.text = $"per second: {newCps}";
+        _cpsText.text = $"per second: {MathK.FormatNumber(newCps)}";
     }
+
+    private void ClickManagerOnOnClickChanged(float clicks)
+    {
+        _currencyText.text = $"Clicks: {MathK.FormatNumber(clicks)}";
+    }
+
+
 }

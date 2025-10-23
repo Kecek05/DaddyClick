@@ -8,29 +8,35 @@ public class ShelfUIManager : MonoBehaviour
     [SerializeField] [Required] private Transform _shelfParent;
     [SerializeField] [Required] private FigureDataListSO _figureDataListSO;
     private Dictionary<FigureType, FigureShelfItem>  _figureShelfItems = new Dictionary<FigureType, FigureShelfItem>();
-    private void Start()
+    private void Awake()
     {
         FigureManager.OnGainFigure += PlayerSaveOnOnGainFigure;
+        PlayerSave.OnSaveLoaded += PlayerSaveOnOnSaveLoaded;
     }
 
     private void OnDestroy()
     {
         FigureManager.OnGainFigure -= PlayerSaveOnOnGainFigure;
+        PlayerSave.OnSaveLoaded -= PlayerSaveOnOnSaveLoaded;
+    }
+    
+    private void PlayerSaveOnOnSaveLoaded()
+    {
+        foreach (var figureItem in FigureManager.BoughtFigures)
+        {
+            PlayerSaveOnOnGainFigure(figureItem.Key, figureItem.Value);
+        }
     }
 
-    private void PlayerSaveOnOnGainFigure()
+    private void PlayerSaveOnOnGainFigure(FigureType type, int figureCount)
     {
-        foreach (var item in FigureManager.BoughtFigures)
+        if (figureCount <= 0) return;
+        
+        if (!_figureShelfItems.ContainsKey(type))
         {
-            if (item.Value > 0)
-            {
-                if (!_figureShelfItems.ContainsKey(item.Key))
-                {
-                    CreateShelfItem(item.Key);
-                }
-                UpdateFigureItem(item.Key, item.Value);
-            }
+            CreateShelfItem(type);
         }
+        UpdateFigureItem(type,figureCount);
     }
 
     private void CreateShelfItem(FigureType figureType)

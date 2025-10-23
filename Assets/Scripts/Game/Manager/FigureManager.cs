@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class FigureManager
 {
-    public static event Action OnGainFigure;
+    public static event Action<FigureType, int> OnGainFigure;
     private const string FIGURES_KEY = "PlayerFigures";
     
     
@@ -27,7 +27,7 @@ public static class FigureManager
     public static void GainFigure(FigureType figureType)
     {
         _boughtFigures[figureType] += 1;
-        OnGainFigure?.Invoke();
+        OnGainFigure?.Invoke(figureType, _boughtFigures[figureType]);
     }
     
     public static void SaveFigures()
@@ -60,6 +60,7 @@ public static class FigureManager
                 for (int i = 0; i < figuresData.figureTypes.Count; i++)
                 {
                     _boughtFigures[figuresData.figureTypes[i]] = figuresData.figureCounts[i];
+                    OnGainFigure?.Invoke(figuresData.figureTypes[i], _boughtFigures[figuresData.figureTypes[i]]);
                 }
             }
         }

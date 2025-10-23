@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CoolDaddyDataSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyDataSO
   Name: Cool Daddy
-  DaddyType: 2
+  DaddyType: 1
   Icon: {fileID: 0}
   Multiplier: 1.5

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ClassicDaddyDataSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyDataSO
   Name: Classic Daddy
-  DaddyType: 1
+  DaddyType: 0
   Icon: {fileID: 0}
   Multiplier: 1.1

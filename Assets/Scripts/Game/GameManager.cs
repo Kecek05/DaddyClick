@@ -1,34 +1,23 @@
-using System;
 using System.Collections;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    //Temp
-    public static event Action<float> OnCpsChanged;
-    
     [SerializeField] private ClickUIManager _clickUIManager;
     [SerializeField] private FigureDataListSO _figuresDataSO;
-    private float _cps;
+    private WaitForSeconds _waitForSeconds = new WaitForSeconds(1f);
     
-    public float CPS => _cps;
-
     private void Awake()
     {
         PlayerSave.OnSaveLoaded += PlayerSaveOnOnSaveLoaded;
+        FigureManager.OnGainFigure += PlayerSaveOnOnGainFigure;
+        DaddyManager.OnUnlockDaddy += DaddyManagerOnOnUnlockDaddy;
     }
 
     private void Start()
     {
         _clickUIManager.OnClick += ClickUIManagerOnOnClick;
-        FigureManager.OnGainFigure += PlayerSaveOnOnGainFigure;
-    }
-
-    private void PlayerSaveOnOnSaveLoaded()
-    {
-        PlayerSaveOnOnGainFigure();
-        StartCoroutine(AutoClicker());
     }
 
     private void OnDestroy()
@@ -36,20 +25,30 @@ public class GameManager : MonoBehaviour
         _clickUIManager.OnClick -= ClickUIManagerOnOnClick;
         FigureManager.OnGainFigure -= PlayerSaveOnOnGainFigure;
         PlayerSave.OnSaveLoaded -= PlayerSaveOnOnSaveLoaded;
+        DaddyManager.OnUnlockDaddy -= DaddyManagerOnOnUnlockDaddy;
+    }
+    
+    private void PlayerSaveOnOnSaveLoaded()
+    {
+        StartCoroutine(AutoClicker());
     }
 
-    private void PlayerSaveOnOnGainFigure()
+    private void PlayerSaveOnOnGainFigure(FigureType figureType, int amount)
     {
-        _cps = ClickUtils.GetCPS(_figuresDataSO);
-        OnCpsChanged?.Invoke(_cps);
+        ClickManager.SetCPS(ClickUtils.GetCPS(_figuresDataSO));
+    }
+    
+    private void DaddyManagerOnOnUnlockDaddy()
+    {
+        MultiplierManager
     }
 
     private IEnumerator AutoClicker()
     {
         while (true)
         {
-            yield return new WaitForSeconds(1f);
-            DoClick(_cps);
+            yield return _waitForSeconds;
+            DoClick(ClickManager.CPS);
         }
     }
 
@@ -67,13 +66,13 @@ public class GameManager : MonoBehaviour
     [Button]
     private void DoClick(float clickValue) 
     {
-        CurrencyManager.AddCurrency(clickValue * MultiplierManager.CurrentMultiplier);
+        ClickManager.AddClicks(clickValue * MultiplierManager.CurrentMultiplier);
     }
     
     //DEBUG
     [Button]
     private void ChangeCurrencyDebug(float value)
     {
-        CurrencyManager.SetCurrency(value);
+        ClickManager.SetClicks(value);
     }
 }

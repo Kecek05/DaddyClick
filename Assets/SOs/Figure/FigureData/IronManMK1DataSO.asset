@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: IronManMK1DataSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureDataSO
   Name: IronManMK1
-  FigureType: 2
+  FigureType: 1
   Icon: {fileID: 0}
   CPS: 5

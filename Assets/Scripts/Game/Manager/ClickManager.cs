@@ -1,6 +1,63 @@
+using System;
 using UnityEngine;
 
-public class ClickManager
+public static class ClickManager
 {
     
+    public static event Action<float> OnClickChanged;
+    public static event Action<float> OnCpsChanged;
+    
+    private const string CLICKS_KEY = "PlayerClicks";
+    
+    
+    private static float _clicks = 0f;
+    private static float _cps;
+    
+    public static float CPS => _cps;
+    public static double Clicks => _clicks;
+    
+    public static void AddClicks(float amount)
+    {
+        _clicks += amount;
+        OnClickChanged?.Invoke(_clicks);
+    }
+
+    public static void SpendClicks(float amount)
+    {
+        _clicks -= amount;
+        OnClickChanged?.Invoke(_clicks);
+    }
+    
+    public static void SetClicks(float amount)
+    {
+        _clicks = amount;
+        OnClickChanged?.Invoke(_clicks);
+    }
+    
+    public static void SetCPS(float amount)
+    {
+        _cps = amount;
+        OnCpsChanged?.Invoke(_cps);
+    }
+    
+    public static bool CanSpendClicks(float amount)
+    {
+        return _clicks >= amount;
+    }
+
+    public static void LoadClick()
+    {
+        _clicks = PlayerPrefs.GetFloat(CLICKS_KEY, 0f);
+    }
+    
+    public static void SaveClick()
+    {
+        PlayerPrefs.SetFloat(CLICKS_KEY, _clicks);
+    }
+
+    public static void ResetSave()
+    {
+        PlayerPrefs.DeleteKey(CLICKS_KEY);
+        _clicks = 0f;
+    }
 }

@@ -6,6 +6,7 @@ public class FigureShelfItem : MonoBehaviour
 {
     [SerializeField] [Required] private TextMeshProUGUI _nameText;
     [SerializeField] [Required] private TextMeshProUGUI _cpsTotalText;
+    [SerializeField] [Required] private TextMeshProUGUI _countText;
     private FigureDataSO _figureDataSO;
 
     public void SetupItem(FigureDataSO figureDataSO)
@@ -18,5 +19,6 @@ public class FigureShelfItem : MonoBehaviour
     public void UpdateAmount(int amount)
     {
         _cpsTotalText.text = $"{_figureDataSO.CPS * amount}/s";
+        _countText.text = $"{amount}";
     }
 }

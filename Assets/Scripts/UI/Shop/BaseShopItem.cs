@@ -11,7 +11,7 @@ public abstract class BaseShopItem : MonoBehaviour
     [SerializeField] [Required] protected TextMeshProUGUI _valueText;
     [SerializeField] [Required] protected Button _buyButton;
 
-    protected float _currentCost;
+    protected float _clickCost;
     
     protected virtual void Awake()
     {

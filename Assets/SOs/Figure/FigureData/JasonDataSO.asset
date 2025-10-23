@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: JasonDataSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureDataSO
   Name: Jason
-  FigureType: 1
+  FigureType: 0
   Icon: {fileID: 0}
   CPS: 1

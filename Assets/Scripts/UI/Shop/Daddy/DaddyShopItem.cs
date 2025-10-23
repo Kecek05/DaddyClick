@@ -5,9 +5,9 @@ public class DaddyShopItem : BaseShopItem
 
     protected override void OnButtonClick()
     {
-        if (CurrencyManager.CanSpendCurrency(_currentCost) && !DaddyManager.GetDaddyUnlockStatusByType(_daddyShopSO.DaddyData.DaddyType))
+        if (ClickManager.CanSpendClicks(_clickCost) && !DaddyManager.GetDaddyUnlockStatusByType(_daddyShopSO.DaddyData.DaddyType))
         {
-            CurrencyManager.SpendCurrency(_currentCost);
+            ClickManager.SpendClicks(_clickCost);
             DaddyManager.UnlockDaddy(_daddyShopSO.DaddyData.DaddyType);
             UpdateBought();
         }
@@ -16,9 +16,9 @@ public class DaddyShopItem : BaseShopItem
     public void SetupItem(DaddyShopSO daddyShopSO)
     {
         _daddyShopSO = daddyShopSO;
-        _currentCost = _daddyShopSO.Cost;
+        _clickCost = _daddyShopSO.Cost;
         _nameText.text = _daddyShopSO.DaddyData.Name;
-        _costText.text = $"${_currentCost}";
+        _costText.text = $"${MathK.FormatNumber(_clickCost)}";
         _valueText.text = $"x{_daddyShopSO.DaddyData.Multiplier}";
         
         if (DaddyManager.GetDaddyUnlockStatusByType(_daddyShopSO.DaddyData.DaddyType))
