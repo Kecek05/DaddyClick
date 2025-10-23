@@ -8,9 +8,23 @@ public enum FigureType
 
 public enum DaddyType
 {
-    ClassicDaddy,
+    BossDaddy,
+    CrazyDaddy,
+    InitialDaddy,
+    DaddyJunino,
+    DrunkDaddy,
+    StrudelDaddy,
+    ChefDaddy,
+    HappyDaddy,
+    DeficientDaddy,
+    MarriedDaddy,
+    WaiterDaddy,
+    PoloDaddy,
+    PoopDaddy,
+    SantaDaddy,
+    SheDaddy,
     CoolDaddy,
-    SpookyDaddy,
+    PilsenDaddy,
 }
 
 public static class Utils
