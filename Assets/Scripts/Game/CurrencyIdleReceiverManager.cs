@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class CurrencyIdleReceiverManager : MonoBehaviour
 {
-    public static event Action<float> OnCurrencyIdleReceived;
+    /// <summary>
+    /// float: amount of currency received from idle time
+    /// float2: maxPossibleEarnings
+    /// </summary>
+    public static event Action<float, float> OnCurrencyIdleReceived;
     
     [SerializeField] [Required] private FigureDataListSO _figureDataListSO;
+    [SerializeField] private float maxIdleEarnings = 10000f;
     
     private void Awake()
     {
@@ -26,9 +31,9 @@ public class CurrencyIdleReceiverManager : MonoBehaviour
         float idleEarnings = cps * idleTime;
         if (idleEarnings > 0)
         {
+            idleEarnings = Mathf.Min(idleEarnings, maxIdleEarnings);
             ClickManager.AddClicks(idleEarnings);
-            Debug.Log($"You earned {idleEarnings} clicks while idle for {idleTime} seconds.");
-            OnCurrencyIdleReceived?.Invoke(idleEarnings);
+            OnCurrencyIdleReceived?.Invoke(idleEarnings, maxIdleEarnings);
         }
     }
 }

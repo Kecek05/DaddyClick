@@ -15,4 +15,4 @@ MonoBehaviour:
   Name: IronManMK1
   FigureType: 1
   Icon: {fileID: 21300000, guid: 38c4110a9626f4159afaf5cced460f08, type: 3}
-  CPS: 500000000
+  CPS: 5

@@ -9,6 +9,7 @@ public class IdleRewardUI : MonoBehaviour
     private Button _closeButton;
     
     [SerializeField] [Required] TextMeshProUGUI _clickValueText;
+    [SerializeField] [Required] Slider _clickValueSlider;
     [SerializeField] [Required] GameObject _idleRewardPanel;
     
     private void Awake()
@@ -23,9 +24,10 @@ public class IdleRewardUI : MonoBehaviour
         CurrencyIdleReceiverManager.OnCurrencyIdleReceived -= CurrencyIdleReceiverManagerOnOnCurrencyIdleReceived;
     }
 
-    private void CurrencyIdleReceiverManagerOnOnCurrencyIdleReceived(float clicks)
+    private void CurrencyIdleReceiverManagerOnOnCurrencyIdleReceived(float currency, float maxPossibleEarnings)
     {
-        _clickValueText.text = $"Clicks: {MathK.FormatNumber(clicks)}";
+        _clickValueText.text = $"{MathK.FormatNumber(currency)}";
+        _clickValueSlider.value = currency / maxPossibleEarnings;
         OpenUI();
     }
 

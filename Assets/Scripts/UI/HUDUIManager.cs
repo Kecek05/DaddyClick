@@ -34,6 +34,6 @@ public class HUDUIManager : MonoBehaviour
 
     private void ClickManagerOnOnMultiplierChanged(float multiplier)
     {
-        _multiplierText.text = $"<Multiplierincr>x{MathK.FormatNumber(multiplier)}</Multiplierincr>";    
+        _multiplierText.text = $"<Multiplierincr>x{multiplier}</Multiplierincr>";    
     }
 }
