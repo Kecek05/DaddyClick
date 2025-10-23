@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 70a9f5c297790e849b849f4ddc1a1dad
+guid: 416be2c6c121c3b448086669ed60833d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 866593195527299979
-    second: IronManMK1_0
+      213: 8651163829287678964
+    second: MichaelMyersHalloween1978_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,9 +46,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IronManMK1_0
+      name: MichaelMyersHalloween1978_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 486
-        height: 729
+        width: 2085
+        height: 3632
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b83ec208be1c60c00800000000000000
-      internalID: 866593195527299979
+      spriteID: 4f3766abaab1f0870800000000000000
+      internalID: 8651163829287678964
       vertices: []
       indices: 
       edges: []
@@ -125,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IronManMK1_0: 866593195527299979
+      MichaelMyersHalloween1978_0: 8651163829287678964
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

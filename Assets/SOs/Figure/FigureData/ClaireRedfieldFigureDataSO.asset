@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9448e04629333b84eb220e995fe4a3c9, type: 3}
-  m_Name: ITDataSO
+  m_Name: ClaireRedfieldFigureDataSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureDataSO
-  Name: IT
-  FigureType: 2
-  Icon: {fileID: 21300000, guid: e498c622e234a419a83e872a7f8f4fbe, type: 3}
+  Name: Claire Redfield
+  FigureType: 0
+  Icon: {fileID: 0}
   Stars: 0
-  CPS: 2
+  CPS: 0
