@@ -2,7 +2,7 @@ using System.Collections;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class LoadPlayerSave : MonoBehaviour
+public class SaveHandler : MonoBehaviour
 {
     [SerializeField] private float saveIntervalInSeconds = 60f; // Save every 60 seconds (1 minute)
 

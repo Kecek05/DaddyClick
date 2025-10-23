@@ -10,6 +10,7 @@ public static class DaddyManager
     
     private static Dictionary<DaddyType, bool> _boughtDaddies = new();
     
+    public static Dictionary<DaddyType, bool> BoughtDaddies => _boughtDaddies;
     
     public static void UnlockDaddy(DaddyType daddyType)
     {
@@ -41,6 +42,7 @@ public static class DaddyManager
                 {
                     _boughtDaddies[daddiesData.daddyTypes[i]] = daddiesData.daddyUnlocked[i];
                 }
+                OnUnlockDaddy?.Invoke();
             }
         }
     }

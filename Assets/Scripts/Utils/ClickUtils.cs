@@ -13,4 +13,20 @@ public static class ClickUtils
 
         return cps;
     }
+    
+    public static float GetDaddyMultiplier(DaddyDataListSO daddyDataListSO)
+    {
+        float multiplier = 1f;
+        foreach (var daddyData in daddyDataListSO.Daddies)
+        {
+            if (DaddyManager.BoughtDaddies.TryGetValue(daddyData.DaddyType, out bool unlocked))
+            {
+                if (unlocked)
+                {
+                    multiplier += daddyDataListSO.GetDaddyDataSOByType(daddyData.DaddyType).Multiplier;
+                }
+            }
+        }
+        return multiplier;
+    }
 }

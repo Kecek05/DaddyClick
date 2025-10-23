@@ -6,13 +6,15 @@ public class HUDUIManager : MonoBehaviour
 {
     [SerializeField] [Required] private TextMeshProUGUI _currencyText;
     [SerializeField] [Required] private TextMeshProUGUI _cpsText;
+    [SerializeField] [Required] private TextMeshProUGUI _multiplierText;
 
     private void Awake()
     {
         ClickManager.OnClickChanged += ClickManagerOnOnClickChanged;
         ClickManager.OnCpsChanged += ClickManagerOnOnCpsChanged;
+        ClickManager.OnMultiplierChanged += ClickManagerOnOnMultiplierChanged;
     }
-    
+
     private void OnDestroy()
     {
         ClickManager.OnClickChanged -= ClickManagerOnOnClickChanged;
@@ -30,5 +32,8 @@ public class HUDUIManager : MonoBehaviour
         _currencyText.text = $"Clicks: {MathK.FormatNumber(clicks)}";
     }
 
-
+    private void ClickManagerOnOnMultiplierChanged(float multiplier)
+    {
+        _multiplierText.text = $"Multiplier: x{MathK.FormatNumber(multiplier)}";    
+    }
 }

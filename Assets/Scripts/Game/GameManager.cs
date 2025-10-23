@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private ClickUIManager _clickUIManager;
     [SerializeField] private FigureDataListSO _figuresDataSO;
+    [SerializeField] private DaddyDataListSO _daddyDataListSO;
     private WaitForSeconds _waitForSeconds = new WaitForSeconds(1f);
     
     private void Awake()
@@ -15,14 +16,8 @@ public class GameManager : MonoBehaviour
         DaddyManager.OnUnlockDaddy += DaddyManagerOnOnUnlockDaddy;
     }
 
-    private void Start()
-    {
-        _clickUIManager.OnClick += ClickUIManagerOnOnClick;
-    }
-
     private void OnDestroy()
     {
-        _clickUIManager.OnClick -= ClickUIManagerOnOnClick;
         FigureManager.OnGainFigure -= PlayerSaveOnOnGainFigure;
         PlayerSave.OnSaveLoaded -= PlayerSaveOnOnSaveLoaded;
         DaddyManager.OnUnlockDaddy -= DaddyManagerOnOnUnlockDaddy;
@@ -40,7 +35,7 @@ public class GameManager : MonoBehaviour
     
     private void DaddyManagerOnOnUnlockDaddy()
     {
-        MultiplierManager
+        ClickManager.SetCurrentMultiplier(ClickUtils.GetDaddyMultiplier(_daddyDataListSO));
     }
 
     private IEnumerator AutoClicker()
@@ -48,25 +43,8 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return _waitForSeconds;
-            DoClick(ClickManager.CPS);
+            ClickManager.AddClicks(ClickManager.CPS);
         }
-    }
-
-    private void ClickUIManagerOnOnClick()
-    {
-        ManualClick();
-    }
-
-
-    private void ManualClick() 
-    {
-        DoClick(1);
-    }
-    
-    [Button]
-    private void DoClick(float clickValue) 
-    {
-        ClickManager.AddClicks(clickValue * MultiplierManager.CurrentMultiplier);
     }
     
     //DEBUG

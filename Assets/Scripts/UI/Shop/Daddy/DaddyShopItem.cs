@@ -19,7 +19,7 @@ public class DaddyShopItem : BaseShopItem
         _clickCost = _daddyShopSO.Cost;
         _nameText.text = _daddyShopSO.DaddyData.Name;
         _costText.text = $"${MathK.FormatNumber(_clickCost)}";
-        _valueText.text = $"x{_daddyShopSO.DaddyData.Multiplier}";
+        _valueText.text = $"+x{_daddyShopSO.DaddyData.Multiplier}";
         
         if (DaddyManager.GetDaddyUnlockStatusByType(_daddyShopSO.DaddyData.DaddyType))
             UpdateBought();

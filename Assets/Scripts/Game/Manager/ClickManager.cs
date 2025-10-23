@@ -6,19 +6,28 @@ public static class ClickManager
     
     public static event Action<float> OnClickChanged;
     public static event Action<float> OnCpsChanged;
+    public static event Action<float> OnMultiplierChanged;
     
     private const string CLICKS_KEY = "PlayerClicks";
     
     
     private static float _clicks = 0f;
     private static float _cps;
+    private static float _currentMultiplier = 1f;
     
+    public static float CurrentMultiplier => _currentMultiplier;
     public static float CPS => _cps;
     public static double Clicks => _clicks;
     
+    public static void SetCurrentMultiplier(float multiplier)
+    {
+        _currentMultiplier = multiplier;
+        OnMultiplierChanged?.Invoke(_currentMultiplier);
+    }
+    
     public static void AddClicks(float amount)
     {
-        _clicks += amount;
+        _clicks += amount * CurrentMultiplier;
         OnClickChanged?.Invoke(_clicks);
     }
 

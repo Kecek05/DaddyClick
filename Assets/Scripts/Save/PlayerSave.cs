@@ -12,11 +12,15 @@ public static class PlayerSave
     public static event Action OnSaveLoaded;
 
     private const string LAST_PLAYED_TIME_KEY = "LastPlayedTime";
+    private const string SKIN_KEY = "SelectedSkinType";
     private static DateTime _lastPlayedTime = DateTime.MinValue;
+    private static DaddyType _selectedSkinType;
 
     #region PUBLICS
     
     public static DateTime LastPlayedTime => _lastPlayedTime;
+    
+    public static DaddyType SelectedSkinType => _selectedSkinType;
     
     #endregion
     public static void LoadPlayerSave()
@@ -25,9 +29,16 @@ public static class PlayerSave
         FigureManager.LoadFigures();
         DaddyManager.LoadDaddies();
         LoadLastPlayedTime();
+        LoadSelectedSkin();
  
         OnSaveLoaded?.Invoke();
     }
+
+    private static void LoadSelectedSkin()
+    {
+        _selectedSkinType = (DaddyType)PlayerPrefs.GetInt(SKIN_KEY, 1);
+    }
+    
     private static void LoadLastPlayedTime()
     {
         if (PlayerPrefs.HasKey(LAST_PLAYED_TIME_KEY))
@@ -46,10 +57,16 @@ public static class PlayerSave
         FigureManager.SaveFigures();
         DaddyManager.SaveDaddies();
         SaveLastTime();
+        SaveSelectedSkin();
         
         PlayerPrefs.Save();
     }
 
+    private static void SaveSelectedSkin()
+    {
+        PlayerPrefs.SetInt(SKIN_KEY, (int)_selectedSkinType);
+    }
+    
     private static void SaveLastTime()
     {
         _lastPlayedTime = DateTime.Now;
@@ -70,6 +87,11 @@ public static class PlayerSave
         _lastPlayedTime = DateTime.MinValue;
         
         OnSaveLoaded?.Invoke();
+    }
+    
+    public static void SetSelectedSkin(DaddyType daddyType)
+    {
+        _selectedSkinType = daddyType;
     }
 }
 

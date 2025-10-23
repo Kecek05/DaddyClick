@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DaddyDataSO
   Name: Classic Daddy
   DaddyType: 0
-  Icon: {fileID: 0}
-  Multiplier: 1.1
+  Icon: {fileID: 2785564300681498144, guid: 4dffe6eab57ca4e4ba2f967307bd1c29, type: 3}
+  Multiplier: 0.1
