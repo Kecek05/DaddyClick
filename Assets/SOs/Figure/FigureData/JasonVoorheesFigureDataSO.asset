@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JasonVoorheesFigureDataSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureDataSO
   Name: Jason Voorhees
-  FigureType: 0
-  Icon: {fileID: 0}
+  FigureType: 9
+  Icon: {fileID: 21300000, guid: e1ea5eb89af078c489219dfcf8faa89a, type: 3}
   Stars: 0
   CPS: 0

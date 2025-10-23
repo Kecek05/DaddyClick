@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FigureDataSO
   Name: C3PO e R2D2
   FigureType: 0
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 127c1dbccaf33734fba52deb33eb75d5, type: 3}
   Stars: 0
   CPS: 0

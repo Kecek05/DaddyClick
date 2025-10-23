@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RoyalDefenderFigureDataSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureDataSO
   Name: Royal Defender
-  FigureType: 0
-  Icon: {fileID: 0}
+  FigureType: 23
+  Icon: {fileID: 21300000, guid: f2faf2543da25114ba6db87487fadbd3, type: 3}
   Stars: 0
   CPS: 0

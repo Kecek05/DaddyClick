@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a8da9287aadf0741a1981dcff983071, type: 3}
-  m_Name: JasonFigureShopSO
+  m_Name: JasonVoorheesFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
-  FigureData: {fileID: 11400000, guid: 9fa48d28b5233dd4e9bba3776c508e4a, type: 2}
-  Cost: 15
+  FigureData: {fileID: 11400000, guid: 64fe829a4c90f164f813939c2a54f430, type: 2}
+  Cost: 0
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a8da9287aadf0741a1981dcff983071, type: 3}
-  m_Name: IronManMK1FigureShopSO
+  m_Name: NeoMatrixFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
-  FigureData: {fileID: 11400000, guid: b67d91dec67a93443b91851eb1ad2b78, type: 2}
-  Cost: 50
+  FigureData: {fileID: 11400000, guid: 2bbc60684680aca41a932977d5707a72, type: 2}
+  Cost: 0
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

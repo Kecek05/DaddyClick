@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SpidermanFigureDataSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureDataSO
   Name: Spider Man
-  FigureType: 0
-  Icon: {fileID: 0}
+  FigureType: 24
+  Icon: {fileID: 21300000, guid: e91356f0371d35f40a8edcacbcd921e9, type: 3}
   Stars: 0
   CPS: 0

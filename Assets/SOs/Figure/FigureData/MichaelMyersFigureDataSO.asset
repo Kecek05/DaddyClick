@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MichaelMyersFigureDataSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureDataSO
   Name: Michael Myers
-  FigureType: 0
-  Icon: {fileID: 0}
+  FigureType: 15
+  Icon: {fileID: 21300000, guid: 416be2c6c121c3b448086669ed60833d, type: 3}
   Stars: 0
   CPS: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pennywise1990FigureDataSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureDataSO
   Name: Pennywise 1990
-  FigureType: 0
-  Icon: {fileID: 0}
+  FigureType: 18
+  Icon: {fileID: 21300000, guid: ee4b8e5862aa16e40aa4a60db97ea458, type: 3}
   Stars: 0
   CPS: 0
