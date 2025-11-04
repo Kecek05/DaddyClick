@@ -12,6 +12,6 @@ public class ClickUIManager : MonoBehaviour
 
     private void ClickButton()
     {
-        ClickManager.ManualClick(ClickManager.CPS);
+        ClickManager.ManualClick(1 + ClickManager.CPS);
     }
 }

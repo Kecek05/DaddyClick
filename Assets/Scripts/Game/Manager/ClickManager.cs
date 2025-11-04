@@ -27,11 +27,6 @@ public static class ClickManager
 
     public static void ManualClick(float amount)
     {
-        if (amount == 0f)
-        {
-            amount = 1f;
-        }
-        
         float manualClickAmount = amount * CurrentMultiplier;
         _clicks += manualClickAmount;
         OnManualClick?.Invoke(manualClickAmount);
