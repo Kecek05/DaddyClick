@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MarriedDaddyShopSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyShopSO
   DaddyData: {fileID: 11400000, guid: a360febf8ae57354894915b2f262acf5, type: 2}
-  Cost: 5000000
+  Cost: 1e+14
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

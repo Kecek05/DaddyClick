@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PiratesOfCaribbeanDX39AEFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: 3d5940ce4663e314cb62454670035844, type: 2}
-  Cost: 15000
+  Cost: 30000
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

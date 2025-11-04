@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PoloDaddyShopSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyShopSO
   DaddyData: {fileID: 11400000, guid: 9238eb1020cfec54c85dc3823236057a, type: 2}
-  Cost: 1e+9
+  Cost: 1e+25
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

@@ -16,4 +16,4 @@ MonoBehaviour:
   FigureType: 17
   Icon: {fileID: 21300000, guid: 0c3775686c4bc0242b78f84ae06c6bb1, type: 3}
   Stars: 3
-  CPS: 100
+  CPS: 50

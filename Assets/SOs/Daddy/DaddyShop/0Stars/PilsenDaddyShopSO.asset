@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PilsenDaddyShopSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyShopSO
   DaddyData: {fileID: 11400000, guid: 7f634267aa436f643bdd8dc3052c9c1b, type: 2}
-  Cost: 200
+  Cost: 800
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SantaDaddyShopSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyShopSO
   DaddyData: {fileID: 11400000, guid: 0bcc25766050dad45939bd10f8bea401, type: 2}
-  Cost: 1500000
+  Cost: 6000000
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

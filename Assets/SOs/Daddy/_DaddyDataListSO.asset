@@ -30,6 +30,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 42e4027d0f5168046bef3ab289b63f9a, type: 2}
   - {fileID: 11400000, guid: f519f71a73e112e42a73fdff38fded3f, type: 2}
   - {fileID: 11400000, guid: 74e653ce0a927c849a3ea50c5e3f3e9d, type: 2}
+  - {fileID: 11400000, guid: 45205982bf3b9aa4badbcc90ff7bb1e9, type: 2}
   DaddiesShop:
   - {fileID: 11400000, guid: ebf71f71c67384341a6620aab56d5f5d, type: 2}
   - {fileID: 11400000, guid: 8e8a45dee803fc049a522088092f7d13, type: 2}
@@ -48,3 +49,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 45ac59a9f37bb084a8cf0f75c216b377, type: 2}
   - {fileID: 11400000, guid: 092812e65012b004e89742ac4dd3d3cf, type: 2}
   - {fileID: 11400000, guid: 51d09f87da3f77645b9c13899554f572, type: 2}
+  - {fileID: 11400000, guid: 9589f21325b4c7b419256dffbadc695c, type: 2}

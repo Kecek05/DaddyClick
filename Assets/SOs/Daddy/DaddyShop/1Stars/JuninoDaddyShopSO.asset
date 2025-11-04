@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JuninoDaddyShopSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyShopSO
   DaddyData: {fileID: 11400000, guid: d74cbe90a42f57c4781fedc02651d0e5, type: 2}
-  Cost: 3000
+  Cost: 12000
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

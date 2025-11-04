@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RoyalDefenderFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: 78cf89b5a44973d4abbf5aef6214beb6, type: 2}
-  Cost: 300
+  Cost: 600
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

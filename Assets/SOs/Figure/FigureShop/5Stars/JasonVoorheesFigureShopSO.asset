@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JasonVoorheesFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: 64fe829a4c90f164f813939c2a54f430, type: 2}
-  Cost: 500000
+  Cost: 1000000
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

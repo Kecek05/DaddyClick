@@ -2807,6 +2807,8 @@ GameObject:
   - component: {fileID: 1160916294}
   - component: {fileID: 1160916298}
   - component: {fileID: 1160916299}
+  - component: {fileID: 1160916300}
+  - component: {fileID: 1160916301}
   m_Layer: 5
   m_Name: ClickCanvas
   m_TagString: Untagged
@@ -2926,6 +2928,36 @@ MonoBehaviour:
   _itemShelfPrefab: {fileID: 6097807857554098926, guid: c6fb180dcd7969347870dbb47d7a6d5d, type: 3}
   _shelfParent: {fileID: 5327620818604971922}
   _figureDataListSO: {fileID: 11400000, guid: d05046daa22edd0469c0a401a1fd10fc, type: 2}
+--- !u!114 &1160916300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160916293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1622398dda3e6c4eaf12f3c0411936b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClickPopup
+  _popupParent: {fileID: 2099212338}
+  _clickPopupPool: {fileID: 1160916301}
+--- !u!114 &1160916301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160916293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ca996ae5429864aa75dfe6f9793a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClickPopupPool
+  _prefab: {fileID: 4446792934601807683, guid: 7d9aeef18e6aca144899b6d59f9f508b, type: 3}
+  _initialPoolSize: 10
+  _maxSize: 100
+  _collectionCheck: 0
 --- !u!1 &1185399639
 GameObject:
   m_ObjectHideFlags: 0

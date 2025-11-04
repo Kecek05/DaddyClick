@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NeoMatrixFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: 2bbc60684680aca41a932977d5707a72, type: 2}
-  Cost: 125
+  Cost: 250
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

@@ -16,4 +16,4 @@ MonoBehaviour:
   DaddyType: 9
   Icon: {fileID: 21300000, guid: c558b990ee207d54297f705df0614523, type: 3}
   Stars: 4
-  Multiplier: 20
+  Multiplier: 15

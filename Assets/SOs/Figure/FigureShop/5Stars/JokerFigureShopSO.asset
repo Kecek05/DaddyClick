@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JokerFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: 7ed11264d1213a145980caf09d563309, type: 2}
-  Cost: 1200000
+  Cost: 2400000
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

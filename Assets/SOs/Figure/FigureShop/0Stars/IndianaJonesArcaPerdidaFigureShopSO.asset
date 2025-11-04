@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IndianaJonesArcaPerdidaFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: 0c6e11be9bc6c4a4e914890fdfc36f97, type: 2}
-  Cost: 70
+  Cost: 140
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

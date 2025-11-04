@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DeathTrooperFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: 059c5b6271ff92745b1c23fdd3885622, type: 2}
-  Cost: 35000
+  Cost: 70000
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

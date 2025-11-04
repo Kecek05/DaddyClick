@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ClaireRedfieldFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: c5d06191877babb4883c0e254a33e9f6, type: 2}
-  Cost: 10
+  Cost: 20
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:

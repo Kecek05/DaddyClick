@@ -1,4 +1,3 @@
-using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +5,6 @@ using UnityEngine.UI;
 public class ClickUIManager : MonoBehaviour
 {
     [SerializeField] [Required] private Button _clickButton;
-    
     private void Awake()
     {
         _clickButton.onClick.AddListener(ClickButton);
@@ -14,6 +12,6 @@ public class ClickUIManager : MonoBehaviour
 
     private void ClickButton()
     {
-        ClickManager.AddClicks(1);
+        ClickManager.ManualClick(ClickManager.CPS);
     }
 }

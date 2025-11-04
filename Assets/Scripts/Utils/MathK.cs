@@ -34,4 +34,9 @@ public static class MathK
         string numberFormat = (number % 1 == 0) ? "F0" : "F1";
         return number.ToString(numberFormat) + suffixes[suffixIndex];
     }
+    
+    public static float GetRandomSign()
+    {
+        return Random.value < 0.5f ? -1f : 1f;
+    }
 }

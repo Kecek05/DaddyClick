@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TonyStarkFigureShopSO
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: d47398dbc6a556e4bbab3624f8a47f60, type: 2}
-  Cost: 350
+  Cost: 700
   CostMultiplierCurve:
     serializedVersion: 2
     m_Curve:
