@@ -17,6 +17,8 @@ public class DaddiesShopUI : BaseShopUI
         {
             DaddyShopItem daddyShopItem = Instantiate(_itemPrefab, _shopContentParent).GetComponent<DaddyShopItem>();
             daddyShopItem.SetupItem(daddyShopSO);
+            daddyShopItem.gameObject.SetActive(false);
+            _items.Add(daddyShopItem.gameObject);
         }
     }
 

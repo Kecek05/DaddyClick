@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class ClickManager
 {
-    public static event Action<float> OnManualClick;
+    public static event Action<float, Vector2> OnManualClick;
     public static event Action<float> OnClickChanged;
     public static event Action<float> OnCpsChanged;
     public static event Action<float> OnMultiplierChanged;
@@ -25,11 +25,12 @@ public static class ClickManager
         OnMultiplierChanged?.Invoke(_currentMultiplier);
     }
 
-    public static void ManualClick(float amount)
+    public static void ManualClick(float amount, Vector2 position)
     {
         float manualClickAmount = amount * CurrentMultiplier;
         _clicks += manualClickAmount;
-        OnManualClick?.Invoke(manualClickAmount);
+        OnManualClick?.Invoke(manualClickAmount, position);
+        OnClickChanged?.Invoke(_clicks);
     }
     
     public static void AddClicks(float amount)

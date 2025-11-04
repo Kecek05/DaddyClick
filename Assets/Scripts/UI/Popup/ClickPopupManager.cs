@@ -12,11 +12,11 @@ public class ClickPopupManager : MonoBehaviour
         ClickManager.OnManualClick += ClickManager_OnManualClick;
     }
 
-    private void ClickManager_OnManualClick(float clickValue)
+    private void ClickManager_OnManualClick(float clickValue, Vector2 position)
     {
         ClickPopup newClick = _clickPopupPool.Get();
         newClick.transform.SetParent(_popupParent.transform);
-        newClick.transform.position = Input.mousePosition;
+        newClick.transform.position = position;
         newClick.Setup(clickValue);
     }
 }

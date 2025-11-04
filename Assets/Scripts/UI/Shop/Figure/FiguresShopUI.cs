@@ -17,6 +17,8 @@ public class FiguresShopUI : BaseShopUI
         {
             FigureShopItem figureShopItem = Instantiate(_itemPrefab, _shopContentParent).GetComponent<FigureShopItem>();
             figureShopItem.SetupItem(figureDataSO);
+            figureShopItem.gameObject.SetActive(false);
+            _items.Add(figureShopItem.gameObject);
         }
     }
     

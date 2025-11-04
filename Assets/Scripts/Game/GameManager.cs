@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private ClickUIManager _clickUIManager;
     [SerializeField] private FigureDataListSO _figuresDataSO;
     [SerializeField] private DaddyDataListSO _daddyDataListSO;
     private WaitForSeconds _waitForSeconds = new WaitForSeconds(1f);
