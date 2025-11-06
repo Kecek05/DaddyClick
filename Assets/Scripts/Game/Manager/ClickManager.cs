@@ -150,6 +150,7 @@ public static class ClickManager
     /// </summary>
     public static float CalculateCostAtLevel(float baseCost, float exponent, int level)
     {
+        Debug.Log($"Cost: {baseCost} * {exponent}^{level} = {baseCost * Mathf.Pow(exponent, level)}");
         return baseCost * Mathf.Pow(exponent, level);
     }
     
