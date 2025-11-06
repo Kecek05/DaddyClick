@@ -5,5 +5,5 @@ public class DaddyShopSO : ScriptableObject
 {
     public DaddyDataSO DaddyData;
     public float Cost;
-    public AnimationCurve CostMultiplierCurve;
+    public float CostExponent = 1.15f;
 }

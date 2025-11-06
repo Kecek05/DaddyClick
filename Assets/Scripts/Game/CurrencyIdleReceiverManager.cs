@@ -13,6 +13,8 @@ public class CurrencyIdleReceiverManager : MonoBehaviour
     [SerializeField] [Required] private FigureDataListSO _figureDataListSO;
     [SerializeField] private float maxIdleEarnings = 10000f;
     
+    private DateTime _pauseStartTime;
+    
     private void Awake()
     {
         PlayerSave.OnSaveLoaded += PlayerSaveOnOnSaveLoaded;
@@ -23,12 +25,25 @@ public class CurrencyIdleReceiverManager : MonoBehaviour
         PlayerSave.OnSaveLoaded -= PlayerSaveOnOnSaveLoaded;
     }
 
-    
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus)
+            _pauseStartTime = DateTime.Now;
+        else
+            CalculateAndGrantIdleEarnings(_pauseStartTime);
+    }
+
     private void PlayerSaveOnOnSaveLoaded()
     {
-        float idleTime = (float)(DateTime.Now - PlayerSave.LastPlayedTime).TotalSeconds;
+        CalculateAndGrantIdleEarnings(PlayerSave.LastPlayedTime);
+    }
+    
+    private void CalculateAndGrantIdleEarnings(DateTime startTime)
+    {
+        float idleTime = (float)(DateTime.Now - startTime).TotalSeconds;
         float cps = ClickUtils.GetCPS(_figureDataListSO);
-        float idleEarnings = cps * idleTime;
+        float multiplier = ClickManager.CurrentMultiplier;
+        float idleEarnings = cps * idleTime * multiplier;
         if (idleEarnings > 0)
         {
             idleEarnings = Mathf.Min(idleEarnings, maxIdleEarnings * ClickManager.CurrentMultiplier);

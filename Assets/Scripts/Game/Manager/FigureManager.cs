@@ -30,6 +30,12 @@ public static class FigureManager
         OnGainFigure?.Invoke(figureType, _boughtFigures[figureType]);
     }
     
+    public static void GainFigure(FigureType figureType, int amount)
+    {
+        _boughtFigures[figureType] += amount;
+        OnGainFigure?.Invoke(figureType, _boughtFigures[figureType]);
+    }
+    
     public static void SaveFigures()
     {
         FiguresSaveData figuresData = new FiguresSaveData();

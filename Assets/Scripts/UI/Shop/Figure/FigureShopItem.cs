@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 public class FigureShopItem : BaseShopItem
 {
     private FigureShopSO _figureShopSO;
@@ -11,6 +13,25 @@ public class FigureShopItem : BaseShopItem
             FigureManager.GainFigure(_figureShopSO.FigureData.FigureType);
             UpdateBought();
         }
+    }
+
+    protected override void OnButtonAllClick()
+    {
+        ClickManager.CalculateSpendMaxPossible(
+            _figureShopSO.Cost,
+            _figureShopSO.CostExponent,
+            FigureManager.GetFigureAmountByType(_figureShopSO.FigureData.FigureType),
+            (cost, quantity) =>
+            {
+                ClickManager.SpendClicks(cost);
+                FigureManager.GainFigure(_figureShopSO.FigureData.FigureType, quantity);
+                UpdateBought();
+            });
+    }
+    
+    public void UpdateCountText(int figureCount)
+    {
+        _buyCountText.text = $"{MathK.FormatNumberWithSuffix(figureCount)}";
     }
 
     public void SetupItem(FigureShopSO figureShopSO)
@@ -30,7 +51,8 @@ public class FigureShopItem : BaseShopItem
 
     protected override void UpdateBought()
     {
-        _clickCost = _figureShopSO.Cost * _figureShopSO.CostMultiplierCurve.Evaluate(FigureManager.GetFigureAmountByType(_figureShopSO.FigureData.FigureType));
+        int currentLevel = FigureManager.GetFigureAmountByType(_figureShopSO.FigureData.FigureType);
+        _clickCost = ClickManager.CalculateCostAtLevel(_figureShopSO.Cost, _figureShopSO.CostExponent, currentLevel);
         _costText.text = $"${MathK.FormatNumberWithSuffix(_clickCost)}";
     }
 }

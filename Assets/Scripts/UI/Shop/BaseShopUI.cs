@@ -27,12 +27,12 @@ public abstract class BaseShopUI : MonoBehaviour
         PlayerSave.OnSaveLoaded += PlayerSaveOnOnSaveLoaded;
     }
 
-    protected void OnDestroy()
+    protected virtual void OnDestroy()
     {
         PlayerSave.OnSaveLoaded -= PlayerSaveOnOnSaveLoaded;
     }
 
-    private void PlayerSaveOnOnSaveLoaded()
+    protected virtual void PlayerSaveOnOnSaveLoaded()
     {
         SetupUI();
     }
