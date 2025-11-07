@@ -12,38 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e2cea488733804785bd79d2cf91400, type: 3}
   m_Name: ChefDaddyShopSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyShopSO
-  DaddyData: {fileID: 11400000, guid: 02b13d0b763abe343b39675f732d330b, type: 2}
+  DaddyData: {fileID: 11400000, guid: 718d3c74feb95394a91e770c92c3023c, type: 2}
   Cost: 20000
-  CostMultiplierCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0.2
-      outSlope: 0.2
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 5
-      value: 2
-      inSlope: 0.34853774
-      outSlope: 0.34853774
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.0000022029071
-    - serializedVersion: 3
-      time: 100000
-      value: 100000
-      inSlope: 1.00003
-      outSlope: 1.00003
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  CostExponent: 1.15

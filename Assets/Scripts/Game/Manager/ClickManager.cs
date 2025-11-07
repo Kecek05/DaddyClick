@@ -62,96 +62,57 @@ public static class ClickManager
     {
         return _clicks >= amount;
     }
-
-    /// <summary>
-    /// Calculates the maximum number of purchases possible using exponential cost growth.
-    /// Cost formula: baseCost * (costExponent ^ currentLevel)
-    /// Total cost formula (geometric series): baseCost * (costExponent^start) * (1 - costExponent^quantity) / (1 - costExponent)
-    /// </summary>
+    /*
+     * BaseCost = 20
+     * Cost Exponent = 0.1
+     * Level = 10
+     *  Current Cost = Basecost * (level * costExponent)
+     *  current Cost = 20 * (10 * 0.1) = 20
+     *  Next Cost = 20 * (11 * 0.1) = 22
+     *  Next Next Cost = 20 * (12 * 0.1) = 24
+     * Total Cost to buy 3 levels = 20 + 22 + 24 = 66
+     *
+     *  Current Cost = 20 * (x * 0.1)
+     */
+    
     public static void CalculateSpendMaxPossible(float baseCost, float costExponent, int currentLevel, Action<float, int> onSpend)
     {
         float availableClicks = _clicks;
         
-        // Binary search to find the maximum number of purchases
-        int left = 0;
-        int right = 10000; // Start with reasonable upper bound
-        int maxPurchases = 0;
+        // Cost formula: baseCost * (level * costExponent)
+        // We need to find n where sum of costs from currentLevel to (currentLevel + n - 1) <= availableClicks
+        // Sum = (baseCost * costExponent) * [n * currentLevel + n*(n-1)/2]
+        // This forms a quadratic equation: (a/2)*n^2 + (b - a/2)*n - availableClicks = 0
+        costExponent = Mathf.Max(1f, costExponent);
+        float a = baseCost * costExponent;
+        float b = a * currentLevel;
         
-        // First, expand the search range if needed
-        while (CalculateTotalCostExponential(baseCost, costExponent, currentLevel, right) <= availableClicks)
+        // Quadratic coefficients for: A*n^2 + B*n + C = 0
+        float A = a / 2f;
+        float B = b - a / 2f;
+        float C = -availableClicks;
+        
+        // Quadratic formula: n = (-B + sqrt(B^2 - 4AC)) / (2A)
+        float discriminant = B * B - 4 * A * C;
+        if (discriminant < 0)
         {
-            left = right;
-            right *= 2;
-            
-            // Safety check to prevent infinite loop
-            if (right > 1000000)
-            {
-                maxPurchases = right / 2;
-                break;
-            }
+            onSpend?.Invoke(0f, 0);
+            return;
         }
         
-        // Binary search for exact maximum
-        if (maxPurchases == 0)
-        {
-            while (left <= right)
-            {
-                int mid = left + (right - left) / 2;
-                float totalCost = CalculateTotalCostExponential(baseCost, costExponent, currentLevel, mid);
-                
-                if (totalCost <= availableClicks)
-                {
-                    maxPurchases = mid;
-                    left = mid + 1;
-                }
-                else
-                {
-                    right = mid - 1;
-                }
-            }
-        }
-        Debug.Log($"Quantity: {maxPurchases}");
-        // Return the result
-        if (maxPurchases > 0)
-        {
-            float totalCost = CalculateTotalCostExponential(baseCost, costExponent, currentLevel, maxPurchases);
-            onSpend?.Invoke(totalCost, maxPurchases);
-            Debug.Log($"Total cost: {totalCost} - Quantity: {maxPurchases}");
-        }
+        int levelsToBuy = Mathf.FloorToInt((-B + Mathf.Sqrt(discriminant)) / (2 * A));
+        levelsToBuy = Mathf.Max(0, levelsToBuy);
+        
+        // Calculate actual total cost using arithmetic series sum
+        float totalCost = a * levelsToBuy * (currentLevel + (levelsToBuy - 1) / 2f);
+        
+        onSpend?.Invoke(totalCost, levelsToBuy);
     }
-    
-    /// <summary>
-    /// Calculates the total cost for purchasing 'quantity' items using geometric series formula.
-    /// Formula: baseCost * (exponent^startLevel) * (1 - exponent^quantity) / (1 - exponent)
-    /// </summary>
-    private static float CalculateTotalCostExponential(float baseCost, float exponent, int startLevel, int quantity)
-    {
-        if (quantity <= 0) return 0f;
-        
-        // If exponent is 1, cost is constant
-        if (Mathf.Approximately(exponent, 1f))
-        {
-            return baseCost * quantity;
-        }
-        
-        // Geometric series formula: a * (1 - r^n) / (1 - r)
-        // where a = first term, r = ratio, n = number of terms
-        float firstTerm = baseCost * Mathf.Pow(exponent, startLevel);
-        float ratio = exponent;
-        float numerator = 1f - Mathf.Pow(ratio, quantity);
-        float denominator = 1f - ratio;
-        
-        return firstTerm * (numerator / denominator);
-    }
-    
-    /// <summary>
-    /// Calculates the cost at a specific level.
-    /// Formula: baseCost * (exponent ^ level)
-    /// </summary>
     public static float CalculateCostAtLevel(float baseCost, float exponent, int level)
     {
-        Debug.Log($"Cost: {baseCost} * {exponent}^{level} = {baseCost * Mathf.Pow(exponent, level)}");
-        return baseCost * Mathf.Pow(exponent, level);
+        float levelFloat = level * exponent;
+        levelFloat = Mathf.Max(1f, levelFloat);
+        return baseCost * levelFloat;
     }
     
     public static void LoadClick()
