@@ -52,6 +52,8 @@ public enum DaddyType
     CoolDaddy,
     PilsenDaddy,
     HippieDaddy,
+    ClickerDaddy,
+    VikinDaddy,
 }
 
 public static class Utils

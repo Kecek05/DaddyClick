@@ -14,26 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DaddyDataListSO
   Daddies:
   - {fileID: 11400000, guid: 5655159192238ff4c96af94677fe29fc, type: 2}
-  - {fileID: 11400000, guid: 718d3c74feb95394a91e770c92c3023c, type: 2}
+  - {fileID: 11400000, guid: 02b13d0b763abe343b39675f732d330b, type: 2}
+  - {fileID: 11400000, guid: e3b7015ca8fb027489413ccabe996a8e, type: 2}
   - {fileID: 11400000, guid: fc3e0524eedec934a9536078798ce1e6, type: 2}
   - {fileID: 11400000, guid: a8f3014990514f346ac722b9ee4b40e9, type: 2}
-  - {fileID: 11400000, guid: b5ab989b224182c4aa7a315306947ad5, type: 2}
-  - {fileID: 11400000, guid: 5086233cb763b3842b2f4b4266cc958f, type: 2}
-  - {fileID: 11400000, guid: dd74ea8fe968c284f8df3ac2fee2807e, type: 2}
   - {fileID: 11400000, guid: 913358a18b83ba74a8cef1557bf176f9, type: 2}
+  - {fileID: 11400000, guid: 5086233cb763b3842b2f4b4266cc958f, type: 2}
+  - {fileID: 11400000, guid: b2294f35d6b6eaf449925e0bab009a27, type: 2}
+  - {fileID: 11400000, guid: 45205982bf3b9aa4badbcc90ff7bb1e9, type: 2}
   - {fileID: 11400000, guid: c5d4e6b2f20e2a5419eeb31bd5c26406, type: 2}
   - {fileID: 11400000, guid: 266be058e606aa84880784595f8e2d5c, type: 2}
-  - {fileID: 11400000, guid: 45205982bf3b9aa4badbcc90ff7bb1e9, type: 2}
+  - {fileID: 11400000, guid: a360febf8ae57354894915b2f262acf5, type: 2}
   - {fileID: 11400000, guid: 593e34ca750fb5b46ad3d4e818815cd3, type: 2}
   - {fileID: 11400000, guid: d74cbe90a42f57c4781fedc02651d0e5, type: 2}
-  - {fileID: 11400000, guid: a360febf8ae57354894915b2f262acf5, type: 2}
+  - {fileID: 11400000, guid: 9372a7a004367d4489b60f9a7f0c6baa, type: 2}
   - {fileID: 11400000, guid: 7f634267aa436f643bdd8dc3052c9c1b, type: 2}
   - {fileID: 11400000, guid: 9238eb1020cfec54c85dc3823236057a, type: 2}
-  - {fileID: 11400000, guid: 9372a7a004367d4489b60f9a7f0c6baa, type: 2}
+  - {fileID: 11400000, guid: f519f71a73e112e42a73fdff38fded3f, type: 2}
+  - {fileID: 11400000, guid: 24f487663cf39dc439317ff7d3d555b8, type: 2}
   - {fileID: 11400000, guid: 0bcc25766050dad45939bd10f8bea401, type: 2}
   DaddiesShop:
   - {fileID: 11400000, guid: ebf71f71c67384341a6620aab56d5f5d, type: 2}
   - {fileID: 11400000, guid: 8e8a45dee803fc049a522088092f7d13, type: 2}
+  - {fileID: 11400000, guid: 4f51f83f4f2d0e94eb0f225be89bcd57, type: 2}
   - {fileID: 11400000, guid: b99422afa0af40543b2ff5af6f3104e0, type: 2}
   - {fileID: 11400000, guid: 05e2813fabe7d4d4cada1836d480f05c, type: 2}
   - {fileID: 11400000, guid: 436b22bdc2a16b94da3fb410708a95cb, type: 2}
@@ -49,4 +52,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f5e89f79963b44743b78b7b0352e9748, type: 2}
   - {fileID: 11400000, guid: 45ac59a9f37bb084a8cf0f75c216b377, type: 2}
   - {fileID: 11400000, guid: 092812e65012b004e89742ac4dd3d3cf, type: 2}
+  - {fileID: 11400000, guid: 82c952259fb09b94c8f4d4206afdef23, type: 2}
   - {fileID: 11400000, guid: 51d09f87da3f77645b9c13899554f572, type: 2}

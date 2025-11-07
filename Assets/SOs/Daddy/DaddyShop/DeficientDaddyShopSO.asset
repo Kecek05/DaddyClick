@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e2cea488733804785bd79d2cf91400, type: 3}
   m_Name: DeficientDaddyShopSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyShopSO
-  DaddyData: {fileID: 11400000, guid: b5ab989b224182c4aa7a315306947ad5, type: 2}
+  DaddyData: {fileID: 11400000, guid: 913358a18b83ba74a8cef1557bf176f9, type: 2}
   Cost: 2000
   CostExponent: 0.1

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e2cea488733804785bd79d2cf91400, type: 3}
   m_Name: PoopDaddyShopSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyShopSO
-  DaddyData: {fileID: 11400000, guid: a360febf8ae57354894915b2f262acf5, type: 2}
+  DaddyData: {fileID: 11400000, guid: 9372a7a004367d4489b60f9a7f0c6baa, type: 2}
   Cost: 400
   CostExponent: 0.1

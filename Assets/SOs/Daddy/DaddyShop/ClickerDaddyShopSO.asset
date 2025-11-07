@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6e2cea488733804785bd79d2cf91400, type: 3}
-  m_Name: ChefDaddyShopSO
+  m_Name: ClickerDaddyShopSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyShopSO
-  DaddyData: {fileID: 11400000, guid: 02b13d0b763abe343b39675f732d330b, type: 2}
-  Cost: 20000
+  DaddyData: {fileID: 11400000, guid: e3b7015ca8fb027489413ccabe996a8e, type: 2}
+  Cost: 3.40282e+38
   CostExponent: 0.1
