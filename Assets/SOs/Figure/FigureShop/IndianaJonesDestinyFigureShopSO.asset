@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FigureShopSO
   FigureData: {fileID: 11400000, guid: 79e6482e4f16bfb49b99a8c98c725f04, type: 2}
   Cost: 140000
-  CostExponent: 0.1
+  CostExponent: 0.4
