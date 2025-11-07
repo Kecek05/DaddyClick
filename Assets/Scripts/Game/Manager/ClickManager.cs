@@ -62,18 +62,6 @@ public static class ClickManager
     {
         return _clicks >= amount;
     }
-    /*
-     * BaseCost = 20
-     * Cost Exponent = 0.1
-     * Level = 10
-     *  Current Cost = Basecost * (level * costExponent)
-     *  current Cost = 20 * (10 * 0.1) = 20
-     *  Next Cost = 20 * (11 * 0.1) = 22
-     *  Next Next Cost = 20 * (12 * 0.1) = 24
-     * Total Cost to buy 3 levels = 20 + 22 + 24 = 66
-     *
-     *  Current Cost = 20 * (x * 0.1)
-     */
     
     public static void CalculateSpendMaxPossible(float baseCost, float costExponent, int currentLevel, Action<float, int> onSpend)
     {
