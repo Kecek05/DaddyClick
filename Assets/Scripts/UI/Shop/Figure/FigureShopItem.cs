@@ -23,6 +23,7 @@ public class FigureShopItem : BaseShopItem
             FigureManager.GetFigureAmountByType(_figureShopSO.FigureData.FigureType),
             (cost, quantity) =>
             {
+                if (cost <= 0) return;
                 // Debug.Log($"Cost: {cost} / {quantity}");
                 ClickManager.SpendClicks(cost);
                 FigureManager.GainFigure(_figureShopSO.FigureData.FigureType, quantity);
