@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Unity.Services.CloudSave;
 using UnityEngine;
 
 
@@ -23,12 +25,12 @@ public static class PlayerSave
     public static DaddyType SelectedSkinType => _selectedSkinType;
     
     #endregion
-    public static void LoadPlayerSave()
+    public static async void LoadPlayerSave()
     {
-        ClickManager.LoadClick();
-        FigureManager.LoadFigures();
-        DaddyManager.LoadDaddies();
-        LoadLastPlayedTime();
+        await ClickManager.LoadClick();
+        await FigureManager.LoadFigures();
+        await DaddyManager.LoadDaddies();
+        await LoadLastPlayedTime();
         LoadSelectedSkin();
  
         OnSaveLoaded?.Invoke();
@@ -39,11 +41,12 @@ public static class PlayerSave
         _selectedSkinType = (DaddyType)PlayerPrefs.GetInt(SKIN_KEY, 0);
     }
     
-    private static void LoadLastPlayedTime()
+    private static async Task LoadLastPlayedTime()
     {
-        if (PlayerPrefs.HasKey(LAST_PLAYED_TIME_KEY))
+        var playerData = await CloudSaveService.Instance.Data.Player.LoadAsync(new HashSet<string>{LAST_PLAYED_TIME_KEY});
+        if (playerData.TryGetValue(LAST_PLAYED_TIME_KEY, out var keyName))
         {
-            string lastPlayedTimeString = PlayerPrefs.GetString(LAST_PLAYED_TIME_KEY);
+            string lastPlayedTimeString = keyName.Value.GetAs<string>();
             if (DateTime.TryParse(lastPlayedTimeString, out DateTime loadedTime))
             {
                 _lastPlayedTime = loadedTime;
@@ -51,15 +54,13 @@ public static class PlayerSave
         }
     }
     
-    public static void SavePlayerData()
+    public static async Task SavePlayerData()
     {
-        ClickManager.SaveClick();
-        FigureManager.SaveFigures();
-        DaddyManager.SaveDaddies();
-        SaveLastTime();
+        await ClickManager.SaveClick();
+        await FigureManager.SaveFigures();
+        await DaddyManager.SaveDaddies();
+        await SaveLastTime();
         SaveSelectedSkin();
-        
-        PlayerPrefs.Save();
     }
 
     private static void SaveSelectedSkin()
@@ -67,23 +68,24 @@ public static class PlayerSave
         PlayerPrefs.SetInt(SKIN_KEY, (int)_selectedSkinType);
     }
     
-    private static void SaveLastTime()
+    private static async Task SaveLastTime()
     {
         _lastPlayedTime = DateTime.Now;
-        PlayerPrefs.SetString(LAST_PLAYED_TIME_KEY, _lastPlayedTime.ToString());
+        var data = new Dictionary<string, object> { {LAST_PLAYED_TIME_KEY, _lastPlayedTime.ToString() } };
+        await CloudSaveService.Instance.Data.Player.SaveAsync(data);
     }
     
-    public static void ManualSave()
+    public static async Task ManualSave()
     {
-        SavePlayerData();
+        await SavePlayerData();
     }
     
-    public static void ResetSaveData()
+    public static async void ResetSaveData()
     {
-        FigureManager.ResetSave();
-        DaddyManager.ResetSave();
-        ClickManager.ResetSave();
-        PlayerPrefs.DeleteKey(LAST_PLAYED_TIME_KEY);
+        await FigureManager.ResetSave();
+        await DaddyManager.ResetSave();
+        await ClickManager.ResetSave();
+        await CloudSaveService.Instance.Data.Player.DeleteAsync(LAST_PLAYED_TIME_KEY);
         _selectedSkinType = DaddyType.InitialDaddy;
         _lastPlayedTime = DateTime.MinValue;
         Debug.Log($"Reset Save Data");

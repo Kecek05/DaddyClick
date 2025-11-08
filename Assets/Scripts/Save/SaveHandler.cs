@@ -26,20 +26,27 @@ public class SaveHandler : MonoBehaviour
         while (true)
         {
             yield return _waitForSeconds;
-            PlayerSave.ManualSave();
+            
+            var saveTask = PlayerSave.ManualSave();
+            yield return new WaitUntil(() => saveTask.IsCompleted);
+            
+            if (saveTask.Exception != null)
+            {
+                Debug.LogError($"Auto-save failed: {saveTask.Exception.GetBaseException().Message}");
+            }
         }
     }
 
-    private void OnApplicationQuit()
+    private async void OnApplicationQuit()
     {
-        PlayerSave.ManualSave();
+        await PlayerSave.ManualSave();
     }
 
-    private void OnApplicationPause(bool pauseStatus)
+    private async void OnApplicationPause(bool pauseStatus)
     {
         if (pauseStatus)
         {
-            PlayerSave.ManualSave();
+            await PlayerSave.ManualSave();
         }
     }
 

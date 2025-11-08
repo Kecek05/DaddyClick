@@ -1,5 +1,9 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Unity.Services.CloudSave;
+using Unity.Services.CloudSave.Models;
 using UnityEngine;
 
 public static class ClickManager
@@ -103,19 +107,24 @@ public static class ClickManager
         return baseCost * levelFloat;
     }
     
-    public static void LoadClick()
+    public static async Task LoadClick()
     {
-        _clicks = PlayerPrefs.GetFloat(CLICKS_KEY, 0f);
+        var playerData = await CloudSaveService.Instance.Data.Player.LoadAsync(new HashSet<string>{CLICKS_KEY});
+        if (playerData.TryGetValue(CLICKS_KEY, out var keyName))
+        {
+            _clicks = keyName.Value.GetAs<float>();
+        }
     }
     
-    public static void SaveClick()
+    public static async Task SaveClick()
     {
-        PlayerPrefs.SetFloat(CLICKS_KEY, _clicks);
+        var data = new Dictionary<string, object> { {CLICKS_KEY, _clicks } };
+        await CloudSaveService.Instance.Data.Player.SaveAsync(data);
     }
 
-    public static void ResetSave()
+    public static async Task ResetSave()
     {
-        PlayerPrefs.DeleteKey(CLICKS_KEY);
+        await CloudSaveService.Instance.Data.Player.DeleteAsync(CLICKS_KEY);
         _clicks = 0f;
     }
 }

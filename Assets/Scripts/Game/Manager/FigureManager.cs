@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Unity.Services.CloudSave;
 using UnityEngine;
 
 public static class FigureManager
@@ -36,7 +38,7 @@ public static class FigureManager
         OnGainFigure?.Invoke(figureType, _boughtFigures[figureType]);
     }
     
-    public static void SaveFigures()
+    public static async Task SaveFigures()
     {
         FiguresSaveData figuresData = new FiguresSaveData();
         foreach (var figurePair in _boughtFigures)
@@ -46,19 +48,23 @@ public static class FigureManager
         }
         
         string figuresJson = JsonUtility.ToJson(figuresData);
-        PlayerPrefs.SetString(FIGURES_KEY, figuresJson);
+        
+        var data = new Dictionary<string, object> { {FIGURES_KEY, figuresJson } };
+        await CloudSaveService.Instance.Data.Player.SaveAsync(data);
+        
     }
 
-    public static void LoadFigures()
+    public static async Task LoadFigures()
     {
         foreach (FigureType figureType in Enum.GetValues(typeof(FigureType)))
         {
             _boughtFigures.Add(figureType, 0);
         }
         
-        if (PlayerPrefs.HasKey(FIGURES_KEY))
+        var playerData = await CloudSaveService.Instance.Data.Player.LoadAsync(new HashSet<string>{FIGURES_KEY});
+        if (playerData.TryGetValue(FIGURES_KEY, out var keyName))
         {
-            string figuresJson = PlayerPrefs.GetString(FIGURES_KEY);
+            string figuresJson = keyName.Value.GetAs<string>();
             FiguresSaveData figuresData = JsonUtility.FromJson<FiguresSaveData>(figuresJson);
             
             if (figuresData != null && figuresData.figureTypes != null && figuresData.figureCounts != null)
@@ -72,9 +78,9 @@ public static class FigureManager
         }
     }
     
-    public static void ResetSave()
+    public static async Task ResetSave()
     {
-        PlayerPrefs.DeleteKey(FIGURES_KEY);
+        await CloudSaveService.Instance.Data.Player.DeleteAsync(FIGURES_KEY);
         _boughtFigures.Clear();
     }
 }

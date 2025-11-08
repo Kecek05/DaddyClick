@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Unity.Services.CloudSave;
 using UnityEngine;
 
 public static class DaddyManager
@@ -24,7 +26,7 @@ public static class DaddyManager
         return isUnlocked;
     }
     
-    public static void LoadDaddies()
+    public static async Task LoadDaddies()
     {
         foreach (DaddyType daddyType in Enum.GetValues(typeof(DaddyType)))
         {
@@ -33,9 +35,10 @@ public static class DaddyManager
 
         _boughtDaddies[DaddyType.InitialDaddy] = true;
         
-        if (PlayerPrefs.HasKey(DADDIES_KEY))
+        var playerData = await CloudSaveService.Instance.Data.Player.LoadAsync(new HashSet<string>{DADDIES_KEY});
+        if (playerData.TryGetValue(DADDIES_KEY, out var keyName))
         {
-            string daddiesJson = PlayerPrefs.GetString(DADDIES_KEY);
+            string daddiesJson = keyName.Value.GetAs<string>();
             DaddiesSaveData daddiesData = JsonUtility.FromJson<DaddiesSaveData>(daddiesJson);
             
             if (daddiesData != null && daddiesData.daddyTypes != null && daddiesData.daddyUnlocked != null)
@@ -49,7 +52,7 @@ public static class DaddyManager
         }
     }
     
-    public static void SaveDaddies()
+    public static async Task SaveDaddies()
     {
         DaddiesSaveData daddiesData = new DaddiesSaveData();
         foreach (var daddyPair in _boughtDaddies)
@@ -59,12 +62,14 @@ public static class DaddyManager
         }
         
         string daddiesJson = JsonUtility.ToJson(daddiesData);
-        PlayerPrefs.SetString(DADDIES_KEY, daddiesJson);
+        
+        var data = new Dictionary<string, object> { {DADDIES_KEY, daddiesJson } };
+        await CloudSaveService.Instance.Data.Player.SaveAsync(data);
     }
 
-    public static void ResetSave()
+    public static async Task ResetSave()
     {
-        PlayerPrefs.DeleteKey(DADDIES_KEY);
+        await CloudSaveService.Instance.Data.Player.DeleteAsync(DADDIES_KEY);
         _boughtDaddies.Clear();
     }
 }
