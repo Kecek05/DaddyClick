@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SheDaddyShopSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyShopSO
   DaddyData: {fileID: 11400000, guid: 9238eb1020cfec54c85dc3823236057a, type: 2}
-  Cost: 400000
+  Cost: 600000
   CostExponent: 0.10000000149011612

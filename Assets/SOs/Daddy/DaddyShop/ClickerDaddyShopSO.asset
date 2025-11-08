@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ClickerDaddyShopSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyShopSO
   DaddyData: {fileID: 11400000, guid: e3b7015ca8fb027489413ccabe996a8e, type: 2}
-  Cost: 9.999999616903162e+35
+  Cost: 1e+36
   CostExponent: 0.10000000149011612

@@ -123,8 +123,9 @@ public class LoginCanvas : MonoBehaviour
             PlayerPrefs.SetString("AccessToken", accessToken);
 
             _authState = AuthState.Authenticated;
-            SceneManager.LoadScene(1);
-            return;
+            _loginButton.interactable = false;
+            await SceneManager.LoadSceneAsync(1);
+            
         }
         catch (AuthenticationException ex)
         {
