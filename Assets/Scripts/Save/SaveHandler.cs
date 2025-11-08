@@ -16,11 +16,6 @@ public class SaveHandler : MonoBehaviour
         PlayerSave.OnSaveLoaded -= PlayerSaveOnOnSaveLoaded;
     }
 
-    private void Start()
-    {
-        PlayerSave.LoadPlayerSave();
-    }
-
     private void PlayerSaveOnOnSaveLoaded()
     {
         StartCoroutine(AutoSaveCoroutine());

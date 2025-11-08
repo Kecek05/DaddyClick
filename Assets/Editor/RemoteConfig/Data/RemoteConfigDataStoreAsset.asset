@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
+  m_Name: RemoteConfigDataStoreAsset
+  m_EditorClassIdentifier: Unity.RemoteConfig.Editor::Unity.RemoteConfig.Editor.RemoteConfigDataStore
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"ea997d51-f215-4328-9a38-2f99c697a4bc\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"BossDaddyCost\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 1E+23\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"163f0b34-4016-4e13-9989-3e06228065d3\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"ChefDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    20000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"fbb79916-e789-414a-80c2-c40b0412f48d\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"ClickerDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    1E+36\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"381562fa-75c7-42bf-8b66-4b402751e103\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"CoolDaddyCost\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 3200000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n     
+    \"entityId\": \"9d558391-b6fc-4cdf-96a6-4575883580c4\"\r\n    },\r\n    \"rs\":
+    {\r\n      \"key\": \"CrazyDaddyCost\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 40000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"49238bb1-67d5-45be-98e0-6fd6bf5fc39b\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"DeficientDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    2000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"161d4ca2-b825-4f8b-bfce-948449679ffb\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"DrunkDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    4000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"0ba76e76-8233-4996-b5fe-9e3a4fb37301\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"HappyDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    1200000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"043399e4-799f-4944-9157-75e4db89349b\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"HippieDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    1E+16\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"3c5b0fcf-8903-48ac-8980-754aeb02cdb5\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"InitialDaddyCost\",\r\n      \"type\":
+    \"float\",\r\n      \"value\": 0.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\":
+    {\r\n      \"entityId\": \"bb1f18f9-eedf-483a-b58d-34a5d7ffbfe2\"\r\n    },\r\n   
+    \"rs\": {\r\n      \"key\": \"JuninoDaddyCost\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 12000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"ea82c848-183d-463f-b536-886bdc45151c\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"MarriedDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    100000000000000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"75fa5853-dc4c-4164-9b7c-2bf5e18058cc\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"PilsenDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    800.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"4921e697-6a79-4833-9443-a794cd35e489\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"PoloDaddyCost\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 1E+18\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"a745c888-56ea-4e15-b42e-dc79796ee874\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"PoopDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    400.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"f96dc855-d9e7-4b8b-8b02-46d1bc97aecb\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"SantaDaddyCost\",\r\n      \"type\":
+    \"float\",\r\n      \"value\": 6000000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\":
+    {\r\n      \"entityId\": \"9b12db11-af8a-4ca8-a4bc-5c3312a84f00\"\r\n    },\r\n   
+    \"rs\": {\r\n      \"key\": \"SheDaddyCost\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 400000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"b0f5b447-1027-4de1-bf33-fb337def2951\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"StrudelDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    120000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"2f06ca9a-e15f-4c47-bfe7-58b19e52ee6f\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"VikinDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    1E+27\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"a9188b46-d813-47c0-b4bc-4b3530a423e4\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"WaiterDaddyCost\",\r\n      \"type\":
+    \"float\",\r\n      \"value\": 200000.0\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"ea997d51-f215-4328-9a38-2f99c697a4bc\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"BossDaddyCost\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 1E+23\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"163f0b34-4016-4e13-9989-3e06228065d3\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"ChefDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    20000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"fbb79916-e789-414a-80c2-c40b0412f48d\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"ClickerDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    1E+36\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"381562fa-75c7-42bf-8b66-4b402751e103\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"CoolDaddyCost\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 3200000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n     
+    \"entityId\": \"9d558391-b6fc-4cdf-96a6-4575883580c4\"\r\n    },\r\n    \"rs\":
+    {\r\n      \"key\": \"CrazyDaddyCost\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 40000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"49238bb1-67d5-45be-98e0-6fd6bf5fc39b\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"DeficientDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    2000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"161d4ca2-b825-4f8b-bfce-948449679ffb\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"DrunkDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    4000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"0ba76e76-8233-4996-b5fe-9e3a4fb37301\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"HappyDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    1200000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"043399e4-799f-4944-9157-75e4db89349b\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"HippieDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    1E+16\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"3c5b0fcf-8903-48ac-8980-754aeb02cdb5\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"InitialDaddyCost\",\r\n      \"type\":
+    \"float\",\r\n      \"value\": 0.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\":
+    {\r\n      \"entityId\": \"bb1f18f9-eedf-483a-b58d-34a5d7ffbfe2\"\r\n    },\r\n   
+    \"rs\": {\r\n      \"key\": \"JuninoDaddyCost\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 12000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"ea82c848-183d-463f-b536-886bdc45151c\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"MarriedDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    100000000000000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"75fa5853-dc4c-4164-9b7c-2bf5e18058cc\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"PilsenDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    800.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"4921e697-6a79-4833-9443-a794cd35e489\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"PoloDaddyCost\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 1E+18\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"a745c888-56ea-4e15-b42e-dc79796ee874\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"PoopDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    400.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"f96dc855-d9e7-4b8b-8b02-46d1bc97aecb\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"SantaDaddyCost\",\r\n      \"type\":
+    \"float\",\r\n      \"value\": 6000000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\":
+    {\r\n      \"entityId\": \"9b12db11-af8a-4ca8-a4bc-5c3312a84f00\"\r\n    },\r\n   
+    \"rs\": {\r\n      \"key\": \"SheDaddyCost\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 400000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"b0f5b447-1027-4de1-bf33-fb337def2951\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"StrudelDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    120000.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"2f06ca9a-e15f-4c47-bfe7-58b19e52ee6f\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"VikinDaddyCost\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    1E+27\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"a9188b46-d813-47c0-b4bc-4b3530a423e4\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"WaiterDaddyCost\",\r\n      \"type\":
+    \"float\",\r\n      \"value\": 200000.0\r\n    }\r\n  }\r\n]"
+  _environments: "[\r\n  {\r\n    \"projectId\": \"5e103b30-0ba9-4099-a850-7f37879d2cee\",\r\n   
+    \"name\": \"production\",\r\n    \"id\": \"b76600ab-97c8-4a8f-93d7-0fc582d708ee\",\r\n   
+    \"isDefault\": true,\r\n    \"createdAt\": \"2025-10-21T11:41:57Z\",\r\n    \"updatedAt\":
+    \"2025-10-21T11:41:57Z\"\r\n  },\r\n  {\r\n    \"projectId\": \"5e103b30-0ba9-4099-a850-7f37879d2cee\",\r\n   
+    \"name\": \"dev\",\r\n    \"id\": \"db022ebe-f3ca-4a9f-a806-8af9c72a0ba9\",\r\n   
+    \"isDefault\": false,\r\n    \"createdAt\": \"2025-11-06T15:45:30Z\",\r\n   
+    \"updatedAt\": \"2025-11-06T15:45:30Z\"\r\n  }\r\n]"
