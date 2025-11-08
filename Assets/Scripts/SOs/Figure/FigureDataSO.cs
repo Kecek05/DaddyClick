@@ -7,5 +7,5 @@ public class FigureDataSO : ScriptableObject
     public FigureType FigureType;
     public Sprite Icon;
     public int Stars;
-    public float CPS;
+    public double CPS;
 }

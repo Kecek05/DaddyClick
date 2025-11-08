@@ -8,103 +8,103 @@ using UnityEngine;
 
 public static class ClickManager
 {
-    public static event Action<float, Vector2> OnManualClick;
-    public static event Action<float> OnClickChanged;
-    public static event Action<float> OnCpsChanged;
-    public static event Action<float> OnMultiplierChanged;
+    public static event Action<double, Vector2> OnManualClick;
+    public static event Action<double> OnClickChanged;
+    public static event Action<double> OnCpsChanged;
+    public static event Action<double> OnMultiplierChanged;
     
     private const string CLICKS_KEY = "PlayerClicks";
     
     
-    private static float _clicks = 0f;
-    private static float _cps;
-    private static float _currentMultiplier = 1f;
+    private static double _clicks = 0.0;
+    private static double _cps;
+    private static double _currentMultiplier = 1.0;
     
-    public static float CurrentMultiplier => _currentMultiplier;
-    public static float CPS => _cps;
+    public static double CurrentMultiplier => _currentMultiplier;
+    public static double CPS => _cps;
     public static double Clicks => _clicks;
     
-    public static void SetCurrentMultiplier(float multiplier)
+    public static void SetCurrentMultiplier(double multiplier)
     {
         _currentMultiplier = multiplier;
         OnMultiplierChanged?.Invoke(_currentMultiplier);
     }
 
-    public static void ManualClick(float amount, Vector2 position)
+    public static void ManualClick(double amount, Vector2 position)
     {
-        float manualClickAmount = amount * CurrentMultiplier;
+        double manualClickAmount = amount * CurrentMultiplier;
         _clicks += manualClickAmount;
         OnManualClick?.Invoke(manualClickAmount, position);
         OnClickChanged?.Invoke(_clicks);
     }
     
-    public static void AddClicks(float amount)
+    public static void AddClicks(double amount)
     {
         _clicks += amount * CurrentMultiplier;
         OnClickChanged?.Invoke(_clicks);
     }
 
-    public static void SpendClicks(float amount)
+    public static void SpendClicks(double amount)
     {
         _clicks -= amount;
         OnClickChanged?.Invoke(_clicks);
     }
     
-    public static void SetClicks(float amount)
+    public static void SetClicks(double amount)
     {
         _clicks = amount;
         OnClickChanged?.Invoke(_clicks);
     }
     
-    public static void SetCPS(float amount)
+    public static void SetCPS(double amount)
     {
         _cps = amount;
         OnCpsChanged?.Invoke(_cps);
     }
     
-    public static bool CanSpendClicks(float amount)
+    public static bool CanSpendClicks(double amount)
     {
         return _clicks >= amount;
     }
     
-    public static void CalculateSpendMaxPossible(float baseCost, float costExponent, int currentLevel, Action<float, int> onSpend)
+    public static void CalculateSpendMaxPossible(double baseCost, double costExponent, int currentLevel, Action<double, int> onSpend)
     {
-        float availableClicks = _clicks;
+        double availableClicks = _clicks;
         
         // Cost formula: baseCost * (level * costExponent)
         // We need to find n where sum of costs from currentLevel to (currentLevel + n - 1) <= availableClicks
         // Sum = (baseCost * costExponent) * [n * currentLevel + n*(n-1)/2]
         // This forms a quadratic equation: (a/2)*n^2 + (b - a/2)*n - availableClicks = 0
-        costExponent = Mathf.Max(1f, costExponent);
-        float a = baseCost * costExponent;
-        float b = a * currentLevel;
+        costExponent = Math.Max(1.0, costExponent);
+        double a = baseCost * costExponent;
+        double b = a * currentLevel;
         
         // Quadratic coefficients for: A*n^2 + B*n + C = 0
-        float A = a / 2f;
-        float B = b - a / 2f;
-        float C = -availableClicks;
+        double A = a / 2.0;
+        double B = b - a / 2.0;
+        double C = -availableClicks;
         
         // Quadratic formula: n = (-B + sqrt(B^2 - 4AC)) / (2A)
-        float discriminant = B * B - 4 * A * C;
+        double discriminant = B * B - 4 * A * C;
         if (discriminant < 0)
         {
-            onSpend?.Invoke(0f, 0);
+            onSpend?.Invoke(0.0, 0);
             return;
         }
         
-        int levelsToBuy = Mathf.FloorToInt((-B + Mathf.Sqrt(discriminant)) / (2 * A));
-        levelsToBuy = Mathf.Max(0, levelsToBuy);
+        int levelsToBuy = (int)Math.Floor((-B + Math.Sqrt(discriminant)) / (2 * A));
+        levelsToBuy = Math.Max(0, levelsToBuy);
         
         // Calculate actual total cost using arithmetic series sum
-        float totalCost = a * levelsToBuy * (currentLevel + (levelsToBuy - 1) / 2f);
+        double totalCost = a * levelsToBuy * (currentLevel + (levelsToBuy - 1) / 2.0);
         
         onSpend?.Invoke(totalCost, levelsToBuy);
     }
-    public static float CalculateCostAtLevel(float baseCost, float exponent, int level)
+    public static double CalculateCostAtLevel(double baseCost, double exponent, int level)
     {
-        float levelFloat = level * exponent;
-        levelFloat = Mathf.Max(1f, levelFloat);
-        return baseCost * levelFloat;
+        double levelDouble = level * exponent;
+        levelDouble = Math.Max(1.0, levelDouble);
+        return baseCost * levelDouble;
     }
     
     public static async Task LoadClick()
@@ -112,7 +112,7 @@ public static class ClickManager
         var playerData = await CloudSaveService.Instance.Data.Player.LoadAsync(new HashSet<string>{CLICKS_KEY});
         if (playerData.TryGetValue(CLICKS_KEY, out var keyName))
         {
-            _clicks = keyName.Value.GetAs<float>();
+            _clicks = keyName.Value.GetAs<double>();
         }
     }
     
@@ -125,6 +125,6 @@ public static class ClickManager
     public static async Task ResetSave()
     {
         await CloudSaveService.Instance.Data.Player.DeleteAsync(CLICKS_KEY);
-        _clicks = 0f;
+        _clicks = 0.0;
     }
 }

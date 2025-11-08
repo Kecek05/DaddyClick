@@ -18,6 +18,9 @@ public class RemoteConfig : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(AuthenticationService.Instance.IsSignedIn);
+        Debug.Log(UnityServices.State);
+
         RemoteConfigService.Instance.FetchCompleted += ApplyRemoteSettings;
         #if UNITY_EDITOR
             Debug.Log("Using DEV environment for Remote Config");
@@ -36,9 +39,16 @@ public class RemoteConfig : MonoBehaviour
         foreach (var daddyData in _daddyDataListSO.DaddiesShop)
         {
             string daddyKey = daddyData.name.Replace("ShopSO", "") + "Cost";
-            float daddyPrice = RemoteConfigService.Instance.appConfig.GetFloat(daddyKey);
+            string daddyPriceString = RemoteConfigService.Instance.appConfig.GetString(daddyKey);
             
-            daddyData.Cost = daddyPrice;
+            if (double.TryParse(daddyPriceString, out double daddyPriceNumber))
+            {
+                daddyData.Cost = daddyPriceNumber;
+            }
+            else
+            {
+                Debug.LogWarning($"Failed to parse cost for {daddyKey}: {daddyPriceString}");
+            }
         }
         PlayerSave.LoadPlayerSave();
     }

@@ -1,9 +1,9 @@
 
 public static class ClickUtils
 {
-    public static float GetCPS(FigureDataListSO figureDataSO)
+    public static double GetCPS(FigureDataListSO figureDataSO)
     {
-        float cps = 0f;
+        double cps = 0.0;
         foreach (var figureData in figureDataSO.Figures)
         {
             int figureCount = 0;
@@ -14,9 +14,9 @@ public static class ClickUtils
         return cps;
     }
     
-    public static float GetDaddyMultiplier(DaddyDataListSO daddyDataListSO)
+    public static double GetDaddyMultiplier(DaddyDataListSO daddyDataListSO)
     {
-        float multiplier = 1f;
+        double multiplier = 1.0;
         foreach (var daddyData in daddyDataListSO.Daddies)
         {
             if (DaddyManager.BoughtDaddies.TryGetValue(daddyData.DaddyType, out bool unlocked))

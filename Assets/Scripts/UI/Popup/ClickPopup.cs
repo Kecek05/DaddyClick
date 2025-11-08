@@ -12,7 +12,7 @@ public class ClickPopup : PoolableMonoBehaviour<ClickPopup>
     
     private Tween _tween;
     
-    public void Setup(float clickValue)
+    public void Setup(double clickValue)
     {
         _canvasGroup.alpha = 1f;
         _textMeshProUGUI.text = $"<CPSswing>{MathK.FormatNumberWithSuffix(clickValue)}</CPSswing>";

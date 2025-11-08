@@ -5,13 +5,13 @@ using UnityEngine;
 public class CurrencyIdleReceiverManager : MonoBehaviour
 {
     /// <summary>
-    /// float: amount of currency received from idle time
-    /// float2: maxPossibleEarnings
+    /// double: amount of currency received from idle time
+    /// double2: maxPossibleEarnings
     /// </summary>
-    public static event Action<float, float> OnCurrencyIdleReceived;
+    public static event Action<double, double> OnCurrencyIdleReceived;
     
     [SerializeField] [Required] private FigureDataListSO _figureDataListSO;
-    [SerializeField] private float maxIdleEarnings = 10000f;
+    [SerializeField] private double maxIdleEarnings = 10000.0;
     
     private DateTime _pauseStartTime;
     
@@ -40,14 +40,14 @@ public class CurrencyIdleReceiverManager : MonoBehaviour
     
     private void CalculateAndGrantIdleEarnings(DateTime startTime)
     {
-        float idleTime = (float)(DateTime.Now - startTime).TotalSeconds;
-        float cps = ClickUtils.GetCPS(_figureDataListSO);
-        float multiplier = ClickManager.CurrentMultiplier;
-        float idleEarnings = cps * idleTime * multiplier;
+        double idleTime = (DateTime.Now - startTime).TotalSeconds;
+        double cps = ClickUtils.GetCPS(_figureDataListSO);
+        double multiplier = ClickManager.CurrentMultiplier;
+        double idleEarnings = cps * idleTime * multiplier;
         
         if (idleEarnings > 0)
         {
-            idleEarnings = Mathf.Min(idleEarnings, maxIdleEarnings * cps * ClickManager.CurrentMultiplier);
+            idleEarnings = Math.Min(idleEarnings, maxIdleEarnings * cps * ClickManager.CurrentMultiplier);
             ClickManager.AddClicks(idleEarnings);
             OnCurrencyIdleReceived?.Invoke(idleEarnings, maxIdleEarnings * cps * ClickManager.CurrentMultiplier);
         }

@@ -16,7 +16,7 @@ public abstract class BaseShopItem : MonoBehaviour
     [SerializeField] [Required] protected Button _buyButton;
     [SerializeField] protected Button _buyAllButton;
 
-    protected float _clickCost;
+    protected double _clickCost;
     
     protected virtual void Awake()
     {

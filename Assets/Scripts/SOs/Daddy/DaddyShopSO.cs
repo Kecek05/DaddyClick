@@ -6,8 +6,8 @@ public class DaddyShopSO : ScriptableObject
 {
     [ValidateInput("ValidateDaddyData", "The first 5 letters of DaddyData file must match this file's first 5 letters")]
     public DaddyDataSO DaddyData;
-    public float Cost;
-    public float CostExponent = 1.15f;
+    public double Cost;
+    public double CostExponent = 1.15;
     
     private bool ValidateDaddyData(DaddyDataSO value)
     {

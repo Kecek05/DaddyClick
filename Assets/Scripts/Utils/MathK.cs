@@ -14,7 +14,7 @@ public static class MathK
         return Mathf.RoundToInt(number);
     }
 
-    public static string FormatNumberWithSuffix(float number)
+    public static string FormatNumberWithSuffix(double number)
     {
         if (number < 1000)
         {
@@ -24,10 +24,18 @@ public static class MathK
         }
 
         int suffixIndex = 0;
-        while (number >= 1000 && suffixIndex < suffixes.Length - 1)
+        // Use 999.5 threshold to handle floating-point precision issues
+        while (number >= 999.5 && suffixIndex < suffixes.Length - 1)
         {
-            number /= 1000f;
+            number /= 1000.0;
             suffixIndex++;
+        }
+        
+        // If we've run out of suffixes and number is still >= 1000, show it with the last suffix
+        if (suffixIndex >= suffixes.Length - 1 && number >= 1000)
+        {
+            // We're at the max suffix, just show the large number with the last suffix
+            return number.ToString("F1") + suffixes[suffixIndex];
         }
         
         // Show decimal only if not .0

@@ -6,8 +6,8 @@ public class FigureShopSO : ScriptableObject
 {
     [ValidateInput("ValidateFigureData", "The first 5 letters of FigureData file must match this file's first 5 letters")]
     public FigureDataSO FigureData;
-    public float Cost;
-    public float CostExponent = 1.05f;
+    public double Cost;
+    public double CostExponent = 1.05;
     
     private bool ValidateFigureData(FigureDataSO value)
     {

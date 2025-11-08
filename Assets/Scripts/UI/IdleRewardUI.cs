@@ -25,11 +25,11 @@ public class IdleRewardUI : MonoBehaviour
         CurrencyIdleReceiverManager.OnCurrencyIdleReceived -= CurrencyIdleReceiverManagerOnOnCurrencyIdleReceived;
     }
 
-    private void CurrencyIdleReceiverManagerOnOnCurrencyIdleReceived(float currency, float maxPossibleEarnings)
+    private void CurrencyIdleReceiverManagerOnOnCurrencyIdleReceived(double currency, double maxPossibleEarnings)
     {
         _clickValueText.text = $"{MathK.FormatNumberWithSuffix(currency)}";
         _maxIdleEarningText.text = $"{MathK.FormatNumberWithSuffix(maxPossibleEarnings)}";
-        _clickValueSlider.value = currency / maxPossibleEarnings;
+        _clickValueSlider.value = (float)(currency / maxPossibleEarnings);
         OpenUI();
     }
 

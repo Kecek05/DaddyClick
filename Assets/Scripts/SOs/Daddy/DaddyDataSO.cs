@@ -7,5 +7,5 @@ public class DaddyDataSO : ScriptableObject
     public DaddyType DaddyType;
     public Sprite Icon;
     public int Stars;
-    public float Multiplier;
+    public double Multiplier;
 }

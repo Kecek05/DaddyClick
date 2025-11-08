@@ -36,10 +36,9 @@ public class LoginCanvas : MonoBehaviour
         
             await SignInWithUnityAsync(accessTokenPlayerPrefs);
         }
-        else
-        {
-            _loginButton.onClick.AddListener(OnLoginClicked);
-        }
+
+        _loginButton.onClick.AddListener(OnLoginClicked);
+        
     }
 
     private void OnLoginClicked()
