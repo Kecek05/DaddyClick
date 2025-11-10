@@ -33,11 +33,12 @@ public class LoginCanvas : MonoBehaviour
         {
             Debug.Log("PlayerPrefs");
             string accessTokenPlayerPrefs = PlayerPrefs.GetString("AccessToken");
-        
+            _loginButton.interactable = false;
             await SignInWithUnityAsync(accessTokenPlayerPrefs);
         }
-
+        if (_loginButton == null) return;
         _loginButton.onClick.AddListener(OnLoginClicked);
+        _loginButton.interactable = true;
         
     }
 

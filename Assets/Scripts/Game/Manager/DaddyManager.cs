@@ -47,6 +47,13 @@ public static class DaddyManager
                 {
                     _boughtDaddies[daddiesData.daddyTypes[i]] = daddiesData.daddyUnlocked[i];
                 }
+            }
+        }
+
+        foreach (var boughtDaddy in _boughtDaddies)
+        {
+            if (boughtDaddy.Value)
+            {
                 OnUnlockDaddy?.Invoke();
             }
         }

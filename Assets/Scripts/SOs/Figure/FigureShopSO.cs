@@ -11,7 +11,7 @@ public class FigureShopSO : ScriptableObject
     
     private bool ValidateFigureData(FigureDataSO value)
     {
-        if (value == null) return true; // Allow null values
+        if (value == null) return false;
         
         string thisFileName = this.name;
         string figureDataFileName = value.name;

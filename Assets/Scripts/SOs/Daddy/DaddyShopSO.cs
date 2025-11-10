@@ -11,7 +11,7 @@ public class DaddyShopSO : ScriptableObject
     
     private bool ValidateDaddyData(DaddyDataSO value)
     {
-        if (value == null) return true; // Allow null values
+        if (value == null) return false;
         
         string thisFileName = this.name;
         string daddyDataFileName = value.name;

@@ -72,9 +72,13 @@ public static class FigureManager
                 for (int i = 0; i < figuresData.figureTypes.Count; i++)
                 {
                     _boughtFigures[figuresData.figureTypes[i]] = figuresData.figureCounts[i];
-                    OnGainFigure?.Invoke(figuresData.figureTypes[i], _boughtFigures[figuresData.figureTypes[i]]);
                 }
             }
+        }
+
+        foreach (var boughtFigure in _boughtFigures)
+        {
+            OnGainFigure?.Invoke(boughtFigure.Key, boughtFigure.Value);
         }
     }
     

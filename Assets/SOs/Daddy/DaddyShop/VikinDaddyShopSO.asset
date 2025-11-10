@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: VikinDaddyShopSO
   m_EditorClassIdentifier: Assembly-CSharp::DaddyShopSO
   DaddyData: {fileID: 11400000, guid: 24f487663cf39dc439317ff7d3d555b8, type: 2}
-  Cost: 1e+27
+  Cost: 9.999999884841548e+26
   CostExponent: 0.10000000149011612

@@ -97,3 +97,4 @@ MonoBehaviour:
   bookmarks: []
   bookmarkedScenePaths:
   - Assets/Scenes/Gameplay.unity
+  - Assets/Scenes/AuthScene.unity

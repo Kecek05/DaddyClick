@@ -11,7 +11,7 @@ public class CurrencyIdleReceiverManager : MonoBehaviour
     public static event Action<double, double> OnCurrencyIdleReceived;
     
     [SerializeField] [Required] private FigureDataListSO _figureDataListSO;
-    [SerializeField] private double maxIdleEarnings = 10000.0;
+    [SerializeField] private double _baseMaxIdleEarnings = 1000.0;
     
     private DateTime _pauseStartTime;
     
@@ -40,16 +40,19 @@ public class CurrencyIdleReceiverManager : MonoBehaviour
     
     private void CalculateAndGrantIdleEarnings(DateTime startTime)
     {
-        double idleTime = (DateTime.Now - startTime).TotalSeconds;
-        double cps = ClickUtils.GetCPS(_figureDataListSO);
-        double multiplier = ClickManager.CurrentMultiplier;
-        double idleEarnings = cps * idleTime * multiplier;
+        if (ClickUtils.GetCPS(_figureDataListSO) == 0.0)
+            return;
         
+        double idleTime = (DateTime.Now - startTime).TotalSeconds;
+        double cps = Math.Max(1.0, ClickUtils.GetCPS(_figureDataListSO) / 10.0);
+        double multiplier = Math.Max(1.0, ClickManager.CurrentMultiplier);
+        double idleEarnings = cps * idleTime * multiplier;
+        double maxIdleEarnings = _baseMaxIdleEarnings * cps * multiplier;
         if (idleEarnings > 0)
         {
-            idleEarnings = Math.Min(idleEarnings, maxIdleEarnings * cps * ClickManager.CurrentMultiplier);
+            idleEarnings = Math.Min(idleEarnings, maxIdleEarnings);
             ClickManager.AddClicks(idleEarnings);
-            OnCurrencyIdleReceived?.Invoke(idleEarnings, maxIdleEarnings * cps * ClickManager.CurrentMultiplier);
+            OnCurrencyIdleReceived?.Invoke(idleEarnings, maxIdleEarnings);
         }
     }
 }
