@@ -72,10 +72,17 @@ public static class ClickManager
         double availableClicks = _clicks;
         
         // Cost formula: baseCost * (level * costExponent)
+        // Check if we can afford at least 1 level
+        double firstLevelCost = CalculateCostAtLevel(baseCost, costExponent, currentLevel);
+        if (firstLevelCost > availableClicks)
+        {
+            onSpend?.Invoke(0.0, 0);
+            return;
+        }
+        
         // We need to find n where sum of costs from currentLevel to (currentLevel + n - 1) <= availableClicks
         // Sum = (baseCost * costExponent) * [n * currentLevel + n*(n-1)/2]
         // This forms a quadratic equation: (a/2)*n^2 + (b - a/2)*n - availableClicks = 0
-        costExponent = Math.Max(1.0, costExponent);
         double a = baseCost * costExponent;
         double b = a * currentLevel;
         
@@ -96,7 +103,15 @@ public static class ClickManager
         levelsToBuy = Math.Max(0, levelsToBuy);
         
         // Calculate actual total cost using arithmetic series sum
-        double totalCost = a * levelsToBuy * (currentLevel + (levelsToBuy - 1) / 2.0);
+        // Sum = a * [n * currentLevel + n*(n-1)/2]
+        double totalCost = a * (levelsToBuy * currentLevel + levelsToBuy * (levelsToBuy - 1) / 2.0);
+        
+        // Ensure we don't exceed available clicks due to floating point precision
+        if (totalCost > availableClicks)
+        {
+            levelsToBuy--;
+            totalCost = a * (levelsToBuy * currentLevel + levelsToBuy * (levelsToBuy - 1) / 2.0);
+        }
         
         onSpend?.Invoke(totalCost, levelsToBuy);
     }
